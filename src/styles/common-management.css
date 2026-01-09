@@ -1,0 +1,641 @@
+/* ============================================================================
+   Common Management Page Styles
+   Base styles for all management pages (Database, Device, Backup, Service, etc.)
+   ============================================================================ */
+
+/* Page Container */
+.management-page {
+  padding: 24px;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* ============================================================================
+   Page Header
+   ============================================================================ */
+.management-page .page-header {
+  background: #fff;
+  padding: 20px 24px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.management-page .page-header-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.management-page .page-header-title > .anticon {
+  margin-top: 4px;
+}
+
+.management-page .page-header-title h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f2937;
+  line-height: 1.3;
+}
+
+.management-page .page-header-description {
+  color: #6b7280;
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.management-page .page-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ============================================================================
+   Statistics Cards
+   ============================================================================ */
+.management-page .stats-row {
+  margin-bottom: 20px;
+}
+
+.management-page .stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  height: 100%;
+}
+
+.management-page .stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.management-page .stat-card .ant-statistic-title {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.management-page .stat-card .ant-statistic-content {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.management-page .stat-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.management-page .stat-card-icon.blue {
+  background: #e6f7ff;
+  color: #1890ff;
+}
+
+.management-page .stat-card-icon.green {
+  background: #f6ffed;
+  color: #52c41a;
+}
+
+.management-page .stat-card-icon.purple {
+  background: #f9f0ff;
+  color: #722ed1;
+}
+
+.management-page .stat-card-icon.orange {
+  background: #fff7e6;
+  color: #fa8c16;
+}
+
+.management-page .stat-card-icon.red {
+  background: #fff1f0;
+  color: #ff4d4f;
+}
+
+.management-page .stat-card-icon.cyan {
+  background: #e6fffb;
+  color: #13c2c2;
+}
+
+/* ============================================================================
+   Main Card Container
+   ============================================================================ */
+.management-page .main-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* ============================================================================
+   Tabs Styling
+   ============================================================================ */
+.management-page .ant-tabs {
+  background: transparent;
+}
+
+.management-page .ant-tabs-nav {
+  margin-bottom: 0;
+  padding: 0 24px;
+  background: #fff;
+}
+
+.management-page .ant-tabs-nav::before {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.management-page .ant-tabs-tab {
+  padding: 16px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  transition: all 0.2s;
+}
+
+.management-page .ant-tabs-tab:hover {
+  color: #1890ff;
+}
+
+.management-page .ant-tabs-tab.ant-tabs-tab-active {
+  color: #1890ff;
+}
+
+.management-page .ant-tabs-tab .anticon {
+  margin-right: 8px;
+}
+
+.management-page .ant-tabs-ink-bar {
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+}
+
+.management-page .ant-tabs-content {
+  padding: 24px;
+}
+
+/* ============================================================================
+   Tab Toolbar
+   ============================================================================ */
+.management-page .tab-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.management-page .tab-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.management-page .tab-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ============================================================================
+   Info Box
+   ============================================================================ */
+.management-page .info-box {
+  background: #f0f7ff;
+  border: 1px solid #91caff;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.management-page .info-box.warning {
+  background: #fffbe6;
+  border-color: #ffe58f;
+}
+
+.management-page .info-box.success {
+  background: #f6ffed;
+  border-color: #b7eb8f;
+}
+
+.management-page .info-box.error {
+  background: #fff1f0;
+  border-color: #ffa39e;
+}
+
+.management-page .info-box-icon {
+  color: #1890ff;
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.management-page .info-box.warning .info-box-icon {
+  color: #faad14;
+}
+
+.management-page .info-box.success .info-box-icon {
+  color: #52c41a;
+}
+
+.management-page .info-box.error .info-box-icon {
+  color: #ff4d4f;
+}
+
+.management-page .info-box-content {
+  flex: 1;
+}
+
+.management-page .info-box-title {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.management-page .info-box-description {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+/* ============================================================================
+   Tables
+   ============================================================================ */
+.management-page .ant-table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.management-page .ant-table-thead > tr > th {
+  background: #fafbfc;
+  font-weight: 600;
+  font-size: 13px;
+  color: #374151;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.management-page .ant-table-tbody > tr > td {
+  padding: 14px 16px;
+  font-size: 13px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.management-page .ant-table-tbody > tr:hover > td {
+  background: #f9fafb;
+}
+
+.management-page .ant-table-tbody > tr:last-child > td {
+  border-bottom: none;
+}
+
+/* ============================================================================
+   Buttons
+   ============================================================================ */
+.management-page .ant-btn {
+  border-radius: 6px;
+  font-weight: 500;
+  height: 36px;
+  padding: 0 16px;
+}
+
+.management-page .ant-btn-primary {
+  box-shadow: 0 2px 4px rgba(24, 144, 255, 0.3);
+}
+
+.management-page .ant-btn-sm {
+  height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+/* ============================================================================
+   Tags
+   ============================================================================ */
+.management-page .ant-tag {
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 2px 8px;
+}
+
+/* ============================================================================
+   Alerts
+   ============================================================================ */
+.management-page .ant-alert {
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.management-page .ant-alert-info {
+  background: #f0f7ff;
+  border-color: #91caff;
+}
+
+.management-page .ant-alert-warning {
+  background: #fffbe6;
+  border-color: #ffe58f;
+}
+
+.management-page .ant-alert-success {
+  background: #f6ffed;
+  border-color: #b7eb8f;
+}
+
+.management-page .ant-alert-error {
+  background: #fff1f0;
+  border-color: #ffa39e;
+}
+
+/* ============================================================================
+   Cards
+   ============================================================================ */
+.management-page .section-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+.management-page .section-card .ant-card-head {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 16px 24px;
+}
+
+.management-page .section-card .ant-card-head-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.management-page .section-card .ant-card-body {
+  padding: 20px 24px;
+}
+
+/* ============================================================================
+   Empty State
+   ============================================================================ */
+.management-page .ant-empty {
+  padding: 60px 20px;
+}
+
+.management-page .ant-empty-description {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.management-page .empty-action {
+  margin-top: 16px;
+}
+
+/* ============================================================================
+   Forms
+   ============================================================================ */
+.management-page .ant-form-item-label > label {
+  font-weight: 500;
+  color: #374151;
+}
+
+.management-page .ant-input,
+.management-page .ant-input-number,
+.management-page .ant-select-selector {
+  border-radius: 6px !important;
+}
+
+.management-page .ant-input:focus,
+.management-page .ant-input-number:focus,
+.management-page .ant-select-selector:focus {
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* ============================================================================
+   SSH Hop Form Styles
+   ============================================================================ */
+.management-page .ssh-hop-card {
+  background: #fafbfc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.management-page .ssh-hop-card .hop-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.management-page .ssh-hop-card .hop-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: #1890ff;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.management-page .ssh-hop-card .hop-title {
+  font-weight: 600;
+  color: #374151;
+}
+
+.management-page .ssh-hop-card .hop-subtitle {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.management-page .ssh-hop-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+  color: #8c8c8c;
+}
+
+.management-page .ssh-hop-connector::before,
+.management-page .ssh-hop-connector::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.management-page .ssh-hop-connector .anticon {
+  margin: 0 12px;
+  font-size: 16px;
+}
+
+.management-page .add-hop-button {
+  width: 100%;
+  border-style: dashed;
+  color: #1890ff;
+  background: #f0f7ff;
+}
+
+.management-page .add-hop-button:hover {
+  border-color: #1890ff;
+  background: #e6f4ff;
+}
+
+/* ============================================================================
+   Modal Styles
+   ============================================================================ */
+.management-page .ant-modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.management-page .ant-modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.management-page .ant-modal-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.management-page .ant-modal-body {
+  padding: 24px;
+}
+
+.management-page .ant-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* ============================================================================
+   Collapse
+   ============================================================================ */
+.management-page .ant-collapse {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.management-page .ant-collapse-header {
+  font-weight: 500;
+  padding: 16px 20px !important;
+}
+
+.management-page .ant-collapse-content-box {
+  padding: 20px !important;
+}
+
+/* ============================================================================
+   Badge
+   ============================================================================ */
+.management-page .ant-badge {
+  margin-left: 8px;
+}
+
+.management-page .ant-badge-count {
+  font-size: 11px;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  line-height: 18px;
+  border-radius: 9px;
+}
+
+/* ============================================================================
+   Divider
+   ============================================================================ */
+.management-page .ant-divider {
+  margin: 16px 0;
+}
+
+/* ============================================================================
+   Connection Status
+   ============================================================================ */
+.management-page .connection-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.management-page .connection-status.connected {
+  background: #f6ffed;
+  color: #52c41a;
+  border: 1px solid #b7eb8f;
+}
+
+.management-page .connection-status.failed {
+  background: #fff1f0;
+  color: #ff4d4f;
+  border: 1px solid #ffa39e;
+}
+
+.management-page .connection-status.unknown {
+  background: #f5f5f5;
+  color: #8c8c8c;
+  border: 1px solid #d9d9d9;
+}
+
+.management-page .connection-status.testing {
+  background: #e6f7ff;
+  color: #1890ff;
+  border: 1px solid #91d5ff;
+}
+
+/* ============================================================================
+   Responsive
+   ============================================================================ */
+@media (max-width: 768px) {
+  .management-page {
+    padding: 16px;
+  }
+
+  .management-page .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .management-page .page-header-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .management-page .tab-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .management-page .tab-toolbar-left,
+  .management-page .tab-toolbar-right {
+    justify-content: flex-start;
+  }
+
+  .management-page .ant-tabs-tab {
+    padding: 12px 12px;
+    font-size: 13px;
+  }
+
+  .management-page .stat-card {
+    margin-bottom: 12px;
+  }
+}

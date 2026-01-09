@@ -1,0 +1,326 @@
+/* ============================================================================
+   DomainSettingsTab.css - Domain Settings Tab Styles
+   ============================================================================ */
+
+/* SSH Hop Form Container */
+.ssh-hop-container {
+  padding: 8px 0;
+}
+
+/* SSH Hop Card */
+.ssh-hop-card {
+  background: #fafbfc;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.ssh-hop-card:hover {
+  border-color: #1890ff;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.1);
+}
+
+.ssh-hop-card.gateway {
+  border-left: 3px solid #faad14;
+}
+
+.ssh-hop-card.target {
+  border-left: 3px solid #1890ff;
+}
+
+/* Hop Header */
+.ssh-hop-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.ssh-hop-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ssh-hop-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #1890ff, #096dd9);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(24, 144, 255, 0.3);
+}
+
+.ssh-hop-number.gateway {
+  background: linear-gradient(135deg, #faad14, #fa8c16);
+  box-shadow: 0 2px 4px rgba(250, 140, 22, 0.3);
+}
+
+.ssh-hop-title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ssh-hop-title-main {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 14px;
+}
+
+.ssh-hop-title-sub {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Hop Connector Arrow */
+.ssh-hop-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+  position: relative;
+}
+
+.ssh-hop-connector::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #e5e7eb, #1890ff, #e5e7eb);
+}
+
+.ssh-hop-connector-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  border: 2px solid #1890ff;
+  border-radius: 50%;
+  color: #1890ff;
+  font-size: 14px;
+  z-index: 1;
+}
+
+/* Hop Form Fields */
+.ssh-hop-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ssh-hop-field-row {
+  display: flex;
+  gap: 12px;
+}
+
+.ssh-hop-field-row.server-select {
+  margin-bottom: 8px;
+}
+
+.ssh-hop-field {
+  flex: 1;
+}
+
+.ssh-hop-field.port {
+  flex: 0 0 100px;
+}
+
+.ssh-hop-field label {
+  display: block;
+  font-weight: 500;
+  color: #374151;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+/* Add Hop Button */
+.ssh-hop-add-btn {
+  width: 100%;
+  border-style: dashed;
+  border-color: #1890ff;
+  color: #1890ff;
+  background: #f0f7ff;
+  height: 44px;
+  border-radius: 8px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.ssh-hop-add-btn:hover {
+  background: #e6f4ff;
+  border-color: #40a9ff;
+  color: #40a9ff;
+}
+
+/* Connect Test Button */
+.ssh-connect-btn {
+  margin-top: 16px;
+}
+
+.ssh-connect-btn .ant-btn {
+  height: 48px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.3);
+}
+
+/* Connection Status */
+.ssh-connection-status {
+  margin-top: 16px;
+  padding: 16px;
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+  border-radius: 8px;
+}
+
+.ssh-connection-status.error {
+  background: #fff1f0;
+  border-color: #ffa39e;
+}
+
+/* Info Box */
+.domain-info-box {
+  background: #f0f7ff;
+  border: 1px solid #91caff;
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.domain-info-box.warning {
+  background: #fffbe6;
+  border-color: #ffe58f;
+}
+
+.domain-info-box-icon {
+  color: #1890ff;
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.domain-info-box.warning .domain-info-box-icon {
+  color: #faad14;
+}
+
+.domain-info-box-content {
+  flex: 1;
+}
+
+.domain-info-box-title {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.domain-info-box-description {
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* K8s Service Info Card */
+.k8s-service-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Section Card */
+.domain-section-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.domain-section-card .ant-card-head {
+  background: #fafbfc;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 12px 16px;
+}
+
+.domain-section-card .ant-card-head-title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.domain-section-card .ant-card-body {
+  padding: 16px;
+}
+
+/* Toolbar */
+.domain-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.domain-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.domain-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Tables */
+.domain-table .ant-table-thead > tr > th {
+  background: #fafbfc;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 12px 14px;
+}
+
+.domain-table .ant-table-tbody > tr > td {
+  font-size: 13px;
+  padding: 12px 14px;
+}
+
+/* Empty State */
+.domain-empty {
+  padding: 40px 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ssh-hop-field-row {
+    flex-direction: column;
+  }
+
+  .ssh-hop-field.port {
+    flex: 1;
+  }
+
+  .domain-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .domain-toolbar-left,
+  .domain-toolbar-right {
+    justify-content: flex-start;
+  }
+}

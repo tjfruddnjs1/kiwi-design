@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Pod 테이블 스타일 */
+.pod-pending-row {
+  background-color: #fffbe6 !important;
+}
+
+.pod-pending-row:hover {
+  background-color: #fff9e6 !important;
+}
+
+.pod-pending-row td {
+  border-bottom: 1px solid #ffe58f !important;
+}
+
+/* Ant Design Table 확장 행 스타일 개선 */
+.ant-table-expanded-row > td {
+  padding: 0 !important;
+}
+
+.ant-table-expand-icon-col {
+  width: 60px !important;
+}

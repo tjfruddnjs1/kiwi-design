@@ -1,0 +1,253 @@
+/* ============================================================================
+   Runtime Setting Component Styles
+   ============================================================================ */
+
+/* Runtime List Card */
+.runtime-list-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.runtime-list-card .ant-card-head {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 16px 20px;
+}
+
+.runtime-list-card .ant-card-head-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.runtime-list-card .ant-card-body {
+  padding: 0;
+}
+
+/* Runtime List Container */
+.runtime-list-container {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+/* Runtime Item */
+.runtime-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #fff;
+}
+
+.runtime-item:last-child {
+  border-bottom: none;
+}
+
+.runtime-item:hover {
+  background: #f9fafb;
+}
+
+.runtime-item:focus {
+  outline: 2px solid #1890ff;
+  outline-offset: -2px;
+}
+
+.runtime-item.selected {
+  background: #e6f7ff;
+  border-left: 3px solid #1890ff;
+}
+
+/* Runtime Item Main */
+.runtime-item-main {
+  display: flex;
+  align-items: flex-start;
+  flex: 1;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* Runtime Item Icon */
+.runtime-item-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #f0f5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.runtime-item-icon .anticon {
+  font-size: 20px;
+  color: #1890ff;
+}
+
+/* Runtime Item Content */
+.runtime-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.runtime-item-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.runtime-item-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+.runtime-type-tag {
+  font-size: 11px;
+  padding: 0 6px;
+  border-radius: 4px;
+}
+
+.runtime-status-tag {
+  font-size: 11px;
+  padding: 0 6px;
+  border-radius: 4px;
+}
+
+.runtime-item-description {
+  color: #6b7280;
+  font-size: 13px;
+  margin-bottom: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 400px;
+}
+
+.runtime-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.runtime-meta-info {
+  color: #8c8c8c;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.runtime-meta-info .anticon {
+  font-size: 12px;
+}
+
+/* Runtime Item Actions */
+.runtime-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.action-menu-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-menu-btn:hover {
+  background: #e6f7ff;
+  color: #1890ff;
+}
+
+.action-delete-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-delete-btn:hover {
+  background: #fff1f0;
+}
+
+/* Empty State */
+.runtime-list-container .ant-empty {
+  padding: 60px 20px;
+}
+
+/* Dropdown Menu Styles */
+.ant-dropdown-menu {
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+  padding: 4px;
+}
+
+.ant-dropdown-menu-item {
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.ant-dropdown-menu-item .anticon {
+  margin-right: 8px;
+}
+
+/* Scrollbar Styles */
+.runtime-list-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.runtime-list-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.runtime-list-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.runtime-list-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .runtime-item {
+    padding: 12px 16px;
+  }
+
+  .runtime-item-main {
+    gap: 12px;
+  }
+
+  .runtime-item-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .runtime-item-icon .anticon {
+    font-size: 18px;
+  }
+
+  .runtime-item-description {
+    max-width: 200px;
+  }
+
+  .runtime-item-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}

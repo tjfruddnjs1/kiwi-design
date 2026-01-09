@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "noImplicitAny": true, // Gradually enabled for better type safety
+    "jsx": "react-jsx",
+    "baseUrl": "src",
+    "types": ["vite/client", "node"],
+    "paths": {
+      "@/*": ["./*"]
+    },
+    // 엄격한 타입 체크 설정 (점진적 개선)
+    // "noImplicitAny": true, // Temporarily disabled
+    "noImplicitReturns": false,
+    "noImplicitThis": true,
+    "noUnusedLocals": false, // TODO: 점진적으로 활성화
+    "noUnusedParameters": false, // TODO: 점진적으로 활성화
+    "exactOptionalPropertyTypes": false, // TODO: 타입 수정 후 활성화
+    "noUncheckedIndexedAccess": true, // 배열 접근 안전성 중요
+    "noImplicitOverride": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "noPropertyAccessFromIndexSignature": false,
+    "strictFunctionTypes": true,
+    "strictNullChecks": false, // Temporarily disabled for compilation
+    "strictPropertyInitialization": false, // Disabled when strictNullChecks is false
+    "useUnknownInCatchVariables": false
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "build", "dist"]
+}

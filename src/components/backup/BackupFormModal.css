@@ -1,0 +1,273 @@
+.backup-form-modal {
+  padding: 16px 0;
+}
+
+.backup-form-modal .ant-alert {
+  margin-bottom: 16px;
+  border-radius: 6px;
+}
+
+.backup-form-modal .ant-form {
+  margin-top: 16px;
+}
+
+.backup-form-modal .ant-form-item {
+  margin-bottom: 20px;
+}
+
+.backup-form-modal .ant-form-item-label {
+  padding-bottom: 8px;
+}
+
+.backup-form-modal .ant-form-item-label > label {
+  font-weight: 500;
+  color: #262626;
+}
+
+.backup-form-modal .ant-form-item-required::before {
+  color: #ff4d4f;
+}
+
+.backup-form-modal .ant-select {
+  border-radius: 6px;
+}
+
+.backup-form-modal .ant-select-selector {
+  border-radius: 6px !important;
+}
+
+.backup-form-modal .ant-select-selection-item {
+  font-weight: 500;
+}
+
+.backup-form-modal .ant-radio-group {
+  width: 100%;
+}
+
+.backup-form-modal .ant-radio-button-wrapper {
+  flex: 1;
+  text-align: center;
+  border-radius: 6px;
+  margin-right: 8px;
+}
+
+.backup-form-modal .ant-radio-button-wrapper:first-child {
+  border-radius: 6px 0 0 6px;
+}
+
+.backup-form-modal .ant-radio-button-wrapper:last-child {
+  border-radius: 0 6px 6px 0;
+  margin-right: 0;
+}
+
+.backup-form-modal .ant-radio-button-wrapper-checked {
+  background-color: #1890ff;
+  border-color: #1890ff;
+  color: #fff;
+}
+
+.backup-form-modal .ant-radio-button-wrapper-checked:hover {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+  color: #fff;
+}
+
+.backup-form-modal .ant-time-picker {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.backup-form-modal .ant-time-picker-input {
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.backup-form-modal .ant-btn-link {
+  color: #1890ff;
+  font-weight: 500;
+}
+
+.backup-form-modal .ant-btn-link:hover {
+  color: #40a9ff;
+}
+
+.backup-form-modal .schedule-section {
+  background-color: #fafafa;
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.backup-form-modal .schedule-section .ant-form-item {
+  margin-bottom: 16px;
+}
+
+.backup-form-modal .schedule-section .ant-form-item:last-child {
+  margin-bottom: 0;
+}
+
+.backup-form-modal .ant-modal-header {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 16px 24px;
+}
+
+.backup-form-modal .ant-modal-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.backup-form-modal .ant-modal-body {
+  padding: 24px;
+}
+
+.backup-form-modal .ant-modal-footer {
+  border-top: 1px solid #f0f0f0;
+  padding: 16px 24px;
+}
+
+.backup-form-modal .ant-modal-footer .ant-btn {
+  border-radius: 6px;
+  font-weight: 500;
+  height: 36px;
+  padding: 0 16px;
+}
+
+.backup-form-modal .ant-modal-footer .ant-btn-primary {
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+
+.backup-form-modal .ant-modal-footer .ant-btn-primary:hover {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+}
+
+.backup-form-modal .ant-modal-footer .ant-btn-default {
+  border-color: #d9d9d9;
+  color: #595959;
+}
+
+.backup-form-modal .ant-modal-footer .ant-btn-default:hover {
+  border-color: #40a9ff;
+  color: #40a9ff;
+}
+
+.backup-form-modal .ant-space {
+  gap: 8px;
+}
+
+.backup-form-modal .ant-space-item {
+  display: flex;
+  align-items: center;
+}
+
+.backup-form-modal .anticon {
+  font-size: 16px;
+}
+
+.backup-form-modal .ant-alert-info {
+  background-color: #e6f7ff;
+  border-color: #91d5ff;
+  color: #1890ff;
+}
+
+.backup-form-modal .ant-alert-info .ant-alert-icon {
+  color: #1890ff;
+}
+
+.backup-form-modal .ant-alert-info .ant-alert-message {
+  color: #1890ff;
+  font-weight: 500;
+}
+
+.backup-form-modal .ant-alert-info .ant-alert-description {
+  color: #595959;
+}
+
+.backup-form-modal .ant-form-item-explain {
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.backup-form-modal .ant-form-item-explain-error {
+  color: #ff4d4f;
+}
+
+.backup-form-modal .ant-form-item-explain-success {
+  color: #52c41a;
+}
+
+.backup-form-modal .ant-form-item-explain-warning {
+  color: #faad14;
+}
+
+.backup-form-modal .ant-form-item-explain-info {
+  color: #1890ff;
+}
+
+.backup-form-modal .ant-select-dropdown {
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.backup-form-modal .ant-select-item {
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.backup-form-modal .ant-select-item-option-selected {
+  background-color: #e6f7ff;
+  color: #1890ff;
+}
+
+.backup-form-modal .ant-select-item-option-active {
+  background-color: #f5f5f5;
+}
+
+.backup-form-modal .ant-select-item-option-disabled {
+  color: #bfbfbf;
+}
+
+.backup-form-modal .ant-select-item-option-disabled:hover {
+  background-color: transparent;
+}
+
+.backup-form-modal .ant-time-picker-dropdown {
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.backup-form-modal .ant-time-picker-panel {
+  border-radius: 6px;
+}
+
+.backup-form-modal .ant-time-picker-panel-inner {
+  border-radius: 6px;
+}
+
+.backup-form-modal .ant-time-picker-panel-select {
+  border-radius: 6px;
+}
+
+.backup-form-modal .ant-time-picker-panel-select-option {
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.backup-form-modal .ant-time-picker-panel-select-option-selected {
+  background-color: #e6f7ff;
+  color: #1890ff;
+}
+
+.backup-form-modal .ant-time-picker-panel-select-option-active {
+  background-color: #f5f5f5;
+}
+
+.backup-form-modal .ant-time-picker-panel-select-option-disabled {
+  color: #bfbfbf;
+}
+
+.backup-form-modal .ant-time-picker-panel-select-option-disabled:hover {
+  background-color: transparent;
+}

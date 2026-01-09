@@ -1,0 +1,552 @@
+.compact-pipeline-container {
+  width: 100%;
+  min-width: 500px; /* 고정 최소 너비 */
+  height: 160px; /* 정사각형 박스를 위한 높이 조정 */
+  padding: 24px 16px 16px 16px;
+  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 50%, #f8f9ff 100%);
+  border-radius: 12px;
+  position: relative;
+  box-shadow:
+    inset 0 1px 3px rgba(0, 0, 0, 0.05),
+    0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+}
+
+/* 파이프라인 배경 라인 효과 */
+.compact-pipeline-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #d9d9d9 5%,
+    #e8e8e8 50%,
+    #d9d9d9 95%,
+    transparent 100%
+  );
+  transform: translateY(-50%);
+  z-index: 0;
+  opacity: 0.4;
+  border-radius: 2px;
+}
+
+.pipeline-flex-row {
+  display: flex;
+  flex-wrap: nowrap; /* 줄바꿈 방지 */
+  gap: 8px;
+  justify-content: space-evenly; /* 균등 배치 */
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.pipeline-stage-col {
+  text-align: center;
+  flex: 1; /* 균등 분할 */
+  min-width: 100px;
+  max-width: 110px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* 단계 간 연결선 (화살표) - 파이프라인 흐름 표현 */
+.pipeline-stage-col:not(:last-child)::after {
+  content: '▶';
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #bfbfbf;
+  font-weight: bold;
+  z-index: 1;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+/* 완료된 단계의 화살표 - 초록색으로 활성화 */
+.pipeline-stage-col.active:not(:last-child)::after {
+  color: #52c41a;
+  opacity: 1;
+  animation: flow-arrow 2s ease-in-out infinite;
+}
+
+/* 진행 중인 단계의 화살표 - 파란색 애니메이션 */
+.pipeline-stage-col:has(.pipeline-stage-item.running):not(:last-child)::after {
+  color: #1890ff;
+  opacity: 1;
+  animation: flow-arrow 1.5s ease-in-out infinite;
+}
+
+/* 화살표 흐름 애니메이션 - 데이터가 흐르는 느낌 */
+@keyframes flow-arrow {
+  0%,
+  100% {
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-50%) translateX(3px);
+    opacity: 0.7;
+  }
+}
+
+.pipeline-stage-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  padding: 8px 6px;
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #fff;
+  border: 2px solid #e8e8e8;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  aspect-ratio: 1 / 1; /* 정사각형 유지 */
+}
+
+/* 단계 헤더 스타일 */
+.pipeline-stage-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* 진행 중인 단계 표시 */
+.pipeline-stage-item.running {
+  border-color: #1890ff;
+  box-shadow: 0 0 16px rgba(24, 144, 255, 0.4);
+  animation: running-pulse 2s ease-in-out infinite;
+}
+
+@keyframes running-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 16px rgba(24, 144, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(24, 144, 255, 0.6);
+  }
+}
+
+/* 완료된 단계 표시 */
+.pipeline-stage-item.completed {
+  border-color: #52c41a;
+  background: linear-gradient(135deg, #f6ffed 0%, #ffffff 100%);
+}
+
+/* 실패한 단계 표시 */
+.pipeline-stage-item.failed {
+  border-color: #ff4d4f;
+  background: linear-gradient(135deg, #fff2f0 0%, #ffffff 100%);
+  box-shadow: 0 0 12px rgba(255, 77, 79, 0.2);
+}
+
+/* 대기 중인 단계 (비활성화) */
+.pipeline-stage-item.pending,
+.pipeline-stage-item.inactive {
+  border-color: #d9d9d9;
+  opacity: 0.6;
+  filter: grayscale(30%);
+}
+
+/* 비활성 단계의 화살표도 회색으로 */
+.pipeline-stage-col:has(.pipeline-stage-item.pending):not(:last-child)::after,
+.pipeline-stage-col:has(.pipeline-stage-item.inactive):not(:last-child)::after {
+  color: #d9d9d9 !important;
+  opacity: 0.4 !important;
+}
+
+.pipeline-stage-item:hover {
+  background-color: #f0f5ff;
+  border-color: #1890ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.15);
+}
+
+/* 순차 진행 시각화: 파이프라인의 순차적 의존성 표현 */
+/* 완료된 단계 뒤에 오는 단계는 활성화 가능 상태로 표시 */
+.pipeline-stage-col.active + .pipeline-stage-col .pipeline-stage-item {
+  border-style: solid;
+}
+
+/* 미완료 단계 뒤의 화살표는 회색 점선으로 */
+.pipeline-stage-col:not(.active):not(:has(.pipeline-stage-item.running)):not(
+    :last-child
+  )::after {
+  color: #d9d9d9;
+  opacity: 0.3;
+}
+
+.pipeline-stage-name {
+  font-size: 16px;
+  line-height: 1.3;
+  white-space: nowrap;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.pipeline-stage-status {
+  font-size: 11px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.pipeline-stage-time {
+  font-size: 11px;
+  height: 18px;
+  min-height: 18px;
+  color: #8c8c8c;
+  line-height: 18px;
+  text-align: center;
+  font-weight: 500;
+  flex-shrink: 0;
+  border-top: 1px dashed #e8e8e8;
+  padding-top: 4px;
+  width: 100%;
+}
+
+/* 시간 표시가 없을 때도 공간 확보 */
+.pipeline-stage-time-placeholder {
+  height: 18px;
+  min-height: 18px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.pipeline-loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 100px; /* 컴포넌트의 최소 높이 */
+  color: #888;
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Disabled 상태 스타일 (시각적 효과만, 클릭은 가능) */
+.pipeline-stage-disabled {
+  /* opacity와 filter는 inline style에서 처리하므로 여기서는 추가 스타일만 */
+  filter: grayscale(40%);
+  opacity: 0.6;
+}
+
+.pipeline-stage-disabled:hover {
+  /* hover 효과는 유지 (클릭 가능함을 나타내기 위해) */
+  background-color: #f5f5f5;
+  opacity: 0.8;
+  border-color: #d9d9d9;
+}
+
+/* antd Progress bar 커스텀 */
+.pipeline-stage-item .ant-progress {
+  width: 100%;
+  max-width: 90px;
+  margin: 0 auto;
+}
+
+.pipeline-stage-item .ant-progress-inner {
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  height: 8px !important;
+}
+
+.pipeline-stage-item .ant-progress-bg {
+  border-radius: 6px;
+  height: 8px !important;
+}
+
+.pipeline-stage-item .ant-progress-text {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  margin-left: 8px !important;
+}
+
+/* 진행 중인 단계의 Progress bar 애니메이션 */
+.pipeline-stage-item.running .ant-progress-bg {
+  animation: progress-flow 2s ease-in-out infinite;
+}
+
+@keyframes progress-flow {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Progress bar 너비 고정 */
+.pipeline-stage-item .ant-progress {
+  width: 100%;
+  max-width: 90px;
+}
+
+/* 태그 기본 스타일 */
+.pipeline-stage-item .ant-tag {
+  margin-top: 6px;
+  border-radius: 6px;
+  font-size: 11px;
+  padding: 4px 10px;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  min-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 분석 성공 상태 */
+.pipeline-stage-item .ant-tag.ant-tag-success {
+  background: linear-gradient(135deg, #52c41a 0%, #73d13d 100%);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* 분석 실패 상태 */
+.pipeline-stage-item .ant-tag.ant-tag-error {
+  background: linear-gradient(135deg, #ff4d4f 0%, #ff7875 100%);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* 분석 진행 중 태그 애니메이션 */
+.pipeline-stage-item .ant-tag.ant-tag-processing {
+  animation: tag-pulse 1.5s ease-in-out infinite;
+  font-weight: 700;
+}
+
+@keyframes tag-pulse {
+  0%,
+  100% {
+    box-shadow: 0 2px 8px rgba(24, 144, 255, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 4px 12px rgba(24, 144, 255, 0.6);
+    transform: scale(1.02);
+  }
+}
+
+/* 대기 상태 태그 - 더 명확하게 표시 */
+.pipeline-stage-item .ant-tag.ant-tag-default {
+  background: #f5f5f5 !important;
+  color: #8c8c8c !important;
+  border: 1.5px dashed #bfbfbf !important;
+  opacity: 0.85 !important;
+  font-weight: 600 !important;
+}
+
+/* 대기 상태 태그 hover 효과 */
+.pipeline-stage-item .ant-tag.ant-tag-default:hover {
+  background: #e8e8e8 !important;
+  border-color: #8c8c8c !important;
+  opacity: 1 !important;
+}
+
+/* 각 단계별 고정 높이 유지 */
+.pipeline-stage-item {
+  box-sizing: border-box;
+}
+
+/* 아이콘과 텍스트 사이 간격 조정 */
+.pipeline-stage-item > * {
+  flex-shrink: 0; /* 요소들이 압축되지 않도록 */
+}
+
+/* 연결 상태 표시: 잠긴 단계 (이전 단계 미완료) */
+.pipeline-stage-col.locked::before {
+  content: '🔒';
+  position: absolute;
+  top: -12px;
+  right: 50%;
+  transform: translateX(50%);
+  font-size: 14px;
+  z-index: 2;
+  opacity: 0.6;
+}
+
+/* 단계별 번호 표시 (선택적) */
+.pipeline-stage-col::before {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: #8c8c8c;
+  font-weight: 500;
+  z-index: 0;
+}
+
+.pipeline-stage-col:nth-child(1)::before {
+  content: 'Step 1';
+}
+
+.pipeline-stage-col:nth-child(2)::before {
+  content: 'Step 2';
+}
+
+.pipeline-stage-col:nth-child(3)::before {
+  content: 'Step 3';
+}
+
+.pipeline-stage-col:nth-child(4)::before {
+  content: 'Step 4';
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+  .compact-pipeline-container {
+    min-width: 100%;
+    height: 150px;
+  }
+
+  .pipeline-flex-row {
+    gap: 6px;
+  }
+
+  .pipeline-stage-col {
+    min-width: 85px;
+    max-width: 95px;
+  }
+
+  .pipeline-stage-item {
+    width: 85px;
+    height: 85px;
+    padding: 6px 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .compact-pipeline-container {
+    min-width: 100%;
+    height: 140px;
+    padding: 20px 8px 8px 8px;
+  }
+
+  .pipeline-flex-row {
+    gap: 4px;
+  }
+
+  .pipeline-stage-col {
+    min-width: 70px;
+    max-width: 80px;
+  }
+
+  .pipeline-stage-item {
+    width: 70px;
+    height: 70px;
+    padding: 6px 3px;
+  }
+
+  .pipeline-stage-name {
+    font-size: 12px !important;
+  }
+
+  .pipeline-stage-status {
+    font-size: 9px;
+  }
+
+  /* 모바일에서 화살표 크기 축소 */
+  .pipeline-stage-col:not(:last-child)::after {
+    font-size: 12px;
+    right: -6px;
+  }
+
+  /* 모바일에서 Step 번호 크기 축소 */
+  .pipeline-stage-col::before {
+    font-size: 9px;
+    top: -14px;
+  }
+
+  .pipeline-stage-item .ant-tag {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+
+  .pipeline-stage-item .ant-progress {
+    max-width: 60px;
+  }
+
+  .pipeline-stage-time {
+    font-size: 9px;
+    height: 14px;
+    min-height: 14px;
+    line-height: 14px;
+  }
+}
+
+/* 매우 작은 화면 */
+@media (max-width: 480px) {
+  .pipeline-stage-col::before {
+    display: none;
+  }
+
+  .compact-pipeline-container {
+    min-width: 100%;
+    height: 120px;
+    padding: 8px 4px;
+  }
+
+  .pipeline-stage-col {
+    min-width: 55px;
+    max-width: 65px;
+  }
+
+  .pipeline-stage-item {
+    width: 55px;
+    height: 55px;
+    padding: 4px 2px;
+  }
+
+  .pipeline-stage-name {
+    font-size: 10px !important;
+  }
+
+  .pipeline-stage-status {
+    font-size: 8px;
+  }
+
+  .pipeline-stage-item .ant-tag {
+    font-size: 8px;
+    padding: 1px 4px;
+  }
+
+  .pipeline-stage-item .ant-progress {
+    max-width: 45px;
+  }
+
+  .pipeline-stage-item .ant-progress-text {
+    font-size: 8px !important;
+  }
+
+  .pipeline-stage-time {
+    font-size: 8px;
+    height: 12px;
+    min-height: 12px;
+    line-height: 12px;
+  }
+}

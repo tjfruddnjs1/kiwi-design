@@ -1,0 +1,342 @@
+
+> k8scontrol-frontend@0.1.0 type-check
+> tsc --noEmit
+
+src/components/backup/BackupSetupHandler.tsx(64,7): error TS2322: Type '({ setupForm, currentStep, setupHops, currentAuthHops, infrastructures, servers, allMinioStorages, configData, setConfigData, setCurrentStep, minioMode, installStatus }: BackupSetupHandlerProps) => { handleNext: () => Promise<void>; }' is not assignable to type 'FC<BackupSetupHandlerProps>'.
+  Type '{ handleNext: () => Promise<void>; }' is missing the following properties from type 'ReactElement<any, any>': type, props, key
+src/components/backup/BackupSetupHandler.tsx(181,13): error TS2322: Type '{ mode: string; id: number; infra_id: number; infra_name: string; infra_type: string; server_id?: number; type: "minio" | "velero"; endpoint: string; access_key: string; secret_key: string; status: "error" | ... 1 more ... | "installing"; error?: string; created_at: string; updated_at: string; }' is not assignable to type 'BackupStorageWithInfra | MinioInstallParams'.
+  Object literal may only specify known properties, and 'mode' does not exist in type 'BackupStorageWithInfra | MinioInstallParams'.
+src/components/backup/BackupSetupHandler.tsx(201,24): error TS2339: Property 'infra_id' does not exist on type 'Server'.
+src/components/backup/BackupSetupHandler.tsx(244,13): error TS2322: Type '{ infra_id: number; server_id: number; access_key: string; secret_key: string; port: number; mode: string; auth_data: AuthData[]; }' is not assignable to type 'BackupStorageWithInfra | MinioInstallParams'.
+  Object literal may only specify known properties, and 'mode' does not exist in type 'BackupStorageWithInfra | MinioInstallParams'.
+src/components/backup/BackupSetupHandler.tsx(265,32): error TS4111: Property 'minio' comes from an index signature, so it must be accessed with ['minio'].
+src/components/backup/BackupSetupHandler.tsx(265,38): error TS2339: Property 'endpoint' does not exist on type 'unknown'.
+src/components/infra/InfraCloudSetting.tsx(90,9): error TS2322: Type '{ host: string; port: string; username: string; password: string; }[]' is not assignable to type '{ host: string; port: number; username: string; password: string; }[]'.
+  Type '{ host: string; port: string; username: string; password: string; }' is not assignable to type '{ host: string; port: number; username: string; password: string; }'.
+    Types of property 'port' are incompatible.
+      Type 'string' is not assignable to type 'number'.
+src/components/infra/InfraDockerSetting.tsx(306,11): error TS2322: Type '{ description: string; extra: Element; }' is not assignable to type 'IntrinsicAttributes & EmptyProps'.
+  Property 'extra' does not exist on type 'IntrinsicAttributes & EmptyProps'.
+src/components/infra/InfraDockerSetting.tsx(530,25): error TS2345: Argument of type '{ success: boolean; containers: unknown[]; compose_project: string; }' is not assignable to parameter of type 'SetStateAction<DockerInfo>'.
+  Type '{ success: boolean; containers: unknown[]; compose_project: string; }' is missing the following properties from type 'DockerInfo': container_count, image_count, images, networks, volumes
+src/components/infra/InfraDockerSetting.tsx(577,11): error TS2322: Type '{ visible: boolean; onCancel: () => void; onConfirm: (authHops: AuthHops[]) => Promise<void>; loading: boolean; }' is not assignable to type 'IntrinsicAttributes & Props'.
+  Property 'onCancel' does not exist on type 'IntrinsicAttributes & Props'.
+src/components/infra/InfraKubernetesSettingNew.tsx(10,10): error TS2614: Module '"../../lib/api"' has no exported member 'AuthHops'. Did you mean to use 'import AuthHops from "../../lib/api"' instead?
+src/components/infra/InfraKubernetesSettingNew.tsx(233,11): error TS2322: Type '{ infra: InfraItem & { nodes?: Node[]; }; externalNodesInfo: { total: number; master: number; worker: number; list: any[]; }; serverResource: ServerResource; onConnect: () => void; }' is not assignable to type 'IntrinsicAttributes & ExternalKubernetesViewProps'.
+  Property 'serverResource' does not exist on type 'IntrinsicAttributes & ExternalKubernetesViewProps'.
+src/components/infra/InfraKubernetesSettingNew.tsx(239,11): error TS2322: Type '{ visible: boolean; onCancel: () => void; onSuccess: (server: any, nodesInfo: any) => void; loading: false; server: { ip: string; port: string; }; }' is not assignable to type 'IntrinsicAttributes & ExternalKubeAuthModalProps'.
+  Property 'onCancel' does not exist on type 'IntrinsicAttributes & ExternalKubeAuthModalProps'.
+src/components/infra/InfraKubernetesSettingNew.tsx(419,9): error TS2322: Type '{ visible: boolean; onCancel: () => void; onConfirm: (nodeData: any) => void; infraId: number; }' is not assignable to type 'IntrinsicAttributes & AddNodeModalProps'.
+  Property 'onCancel' does not exist on type 'IntrinsicAttributes & AddNodeModalProps'.
+src/components/infra/InfraKubernetesSettingNew.tsx(430,9): error TS2322: Type '{ visible: boolean; onCancel: () => void; resource: ServerResource; loading: boolean; serverName: string; }' is not assignable to type 'IntrinsicAttributes & ServerResourceModalProps'.
+  Property 'onCancel' does not exist on type 'IntrinsicAttributes & ServerResourceModalProps'.
+src/components/infra/InfraKubernetesSettingRefactored.tsx(86,11): error TS2322: Type '{ visible: boolean; onCancel: () => void; onConfirm: (authData: any) => Promise<void>; loading: false; }' is not assignable to type 'IntrinsicAttributes & ExternalKubeAuthModalProps'.
+  Property 'onCancel' does not exist on type 'IntrinsicAttributes & ExternalKubeAuthModalProps'.
+src/components/infra/InfraKubernetesSettingRefactored.tsx(155,9): error TS2322: Type '{ visible: boolean; onCancel: () => void; onConfirm: (nodeData: any) => Promise<void>; infra: InfraItem & { nodes?: Node[]; }; existingNodes: Node[]; }' is not assignable to type 'IntrinsicAttributes & AddNodeModalProps'.
+  Property 'onCancel' does not exist on type 'IntrinsicAttributes & AddNodeModalProps'.
+src/components/infra/InfraKubernetesSettingRefactored.tsx(163,9): error TS2322: Type '{ visible: boolean; onCancel: () => void; onConfirm: (authHops: AuthHops[]) => Promise<void>; loading: boolean; purpose: "start" | "resource" | "stop" | "restart" | "checkStatus" | "build" | "rebuild" | "ha_auth" | "delete_worker_auth" | "delete_master_auth"; targetNode: Node; }' is not assignable to type 'IntrinsicAttributes & Props'.
+  Property 'onCancel' does not exist on type 'IntrinsicAttributes & Props'.
+src/components/infra/InfraKubernetesSettingRefactored.tsx(174,9): error TS2322: Type '{ visible: boolean; node: Node; onClose: () => void; infra: InfraItem & { nodes?: Node[]; }; }' is not assignable to type 'IntrinsicAttributes & ServerResourceModalProps'.
+  Property 'node' does not exist on type 'IntrinsicAttributes & ServerResourceModalProps'.
+src/components/infra/kubernetes/InfraAuthHandler.tsx(3,10): error TS2614: Module '"../../../lib/api"' has no exported member 'AuthHops'. Did you mean to use 'import AuthHops from "../../../lib/api"' instead?
+src/components/infra/kubernetes/InfraAuthHandler.tsx(209,9): error TS2322: Type '{ isVisible: boolean; onCancel: () => void; onConfirm: (authHops: AuthHops[]) => void; hops: string; purpose: "start" | "resource" | "stop" | "restart" | "checkStatus" | "build" | "rebuild" | "ha_auth" | "delete_worker_auth" | "delete_master_auth"; serverName: string; isRebuildMode: boolean; isRenewalMode: boolean; }' is not assignable to type 'IntrinsicAttributes & Props'.
+  Property 'isVisible' does not exist on type 'IntrinsicAttributes & Props'. Did you mean 'visible'?
+src/components/infra/kubernetes/KubernetesNodeTabs.tsx(124,28): error TS2339: Property 'running' does not exist on type '{ active: number; inactive: number; total: number; }'.
+src/components/infra/kubernetes/KubernetesNodeTabs.tsx(131,28): error TS2339: Property 'stopped' does not exist on type '{ active: number; inactive: number; total: number; }'.
+src/components/infra/kubernetes/KubernetesNodeTabs.tsx(138,28): error TS2339: Property 'error' does not exist on type '{ active: number; inactive: number; total: number; }'.
+src/components/infra/kubernetes/KubernetesNodeTabs.tsx(145,28): error TS2339: Property 'installing' does not exist on type '{ active: number; inactive: number; total: number; }'.
+src/components/infra/kubernetes/KubernetesNodeTabs.tsx(179,32): error TS2345: Argument of type '{ total: number; running: number; stopped: number; error: number; installing: number; }' is not assignable to parameter of type '{ active: number; inactive: number; total: number; }'.
+  Type '{ total: number; running: number; stopped: number; error: number; installing: number; }' is missing the following properties from type '{ active: number; inactive: number; total: number; }': active, inactive
+src/components/infra/kubernetes/KubernetesNodeTabs.tsx(199,36): error TS2345: Argument of type '{ total: number; running: number; stopped: number; error: number; installing: number; }' is not assignable to parameter of type '{ active: number; inactive: number; total: number; }'.
+src/components/infra/kubernetes/KubernetesNodeTabs.tsx(219,36): error TS2345: Argument of type '{ total: number; running: number; stopped: number; error: number; installing: number; }' is not assignable to parameter of type '{ active: number; inactive: number; total: number; }'.
+src/components/infra/kubernetes/NodeOperationsManager.tsx(5,10): error TS2614: Module '"../../../lib/api"' has no exported member 'AuthHops'. Did you mean to use 'import AuthHops from "../../../lib/api"' instead?
+src/components/infra/kubernetes/NodeOperationsManager.tsx(168,14): error TS2322: Type '({ infra, nodes, onNodesUpdate, onOperationStart, onOperationEnd }: NodeOperationsManagerProps) => { handleNodeOperation: (node: Node, operation: string, authHops: AuthHops[]) => Promise<boolean>; operationHistory: OperationHistory[]; criticalOperationCount: number; }' is not assignable to type 'FC<NodeOperationsManagerProps>'.
+  Type '{ handleNodeOperation: (node: Node, operation: string, authHops: AuthHops[]) => Promise<boolean>; operationHistory: OperationHistory[]; criticalOperationCount: number; }' is missing the following properties from type 'ReactElement<any, any>': type, props, key
+src/components/infra/kubernetes/NodeOperationsManager.tsx(250,9): error TS2345: Argument of type '{ id: number; infra_id: number; hops: AuthHops[]; }' is not assignable to parameter of type '{ id: number; hops: { host: string; port: number; username: string; password: string; }[]; }'.
+  Object literal may only specify known properties, and 'infra_id' does not exist in type '{ id: number; hops: { host: string; port: number; username: string; password: string; }[]; }'.
+src/components/infra/kubernetes/NodeOperationsManager.tsx(269,9): error TS2345: Argument of type '{ id: number; infra_id: number; hops: AuthHops[]; }' is not assignable to parameter of type '{ id: number; hops: { host: string; port: number; username: string; password: string; }[]; }'.
+  Object literal may only specify known properties, and 'infra_id' does not exist in type '{ id: number; hops: { host: string; port: number; username: string; password: string; }[]; }'.
+src/components/infra/kubernetes/NodeOperationsManager.tsx(287,9): error TS2345: Argument of type '{ id: number; infra_id: number; hops: AuthHops[]; }' is not assignable to parameter of type '{ id: number; hops: { host: string; port: number; username: string; password: string; }[]; }'.
+  Object literal may only specify known properties, and 'infra_id' does not exist in type '{ id: number; hops: { host: string; port: number; username: string; password: string; }[]; }'.
+src/components/infra/kubernetes/NodeOperationsPanel.tsx(61,9): error TS2367: This comparison appears to be unintentional because the types 'ServerStatus' and '"not_installed"' have no overlap.
+src/components/infra/kubernetes/NodeOperationsPanel.tsx(94,9): error TS2367: This comparison appears to be unintentional because the types 'ServerStatus' and '"not_installed"' have no overlap.
+src/components/infra/kubernetes/NodeStatusManager.tsx(12,10): error TS2614: Module '"../../../lib/api"' has no exported member 'AuthHops'. Did you mean to use 'import AuthHops from "../../../lib/api"' instead?
+src/components/infra/kubernetes/NodeTableView.tsx(90,22): error TS2322: Type '{ children: (string | number)[]; size: string; color: "blue"; }' is not assignable to type 'IntrinsicAttributes & TagProps & RefAttributes<HTMLSpanElement>'.
+  Property 'size' does not exist on type 'IntrinsicAttributes & TagProps & RefAttributes<HTMLSpanElement>'.
+src/components/infra/kubernetes/types.ts(5,10): error TS2614: Module '"../../../lib/api"' has no exported member 'AuthHops'. Did you mean to use 'import AuthHops from "../../../lib/api"' instead?
+src/components/infra/kubernetes/useKubernetesOperations.ts(7,10): error TS2614: Module '"../../../lib/api"' has no exported member 'AuthHops'. Did you mean to use 'import AuthHops from "../../../lib/api"' instead?
+src/components/infra/kubernetes/useKubernetesOperations.ts(112,9): error TS2322: Type '"not_installed"' is not assignable to type 'ServerStatus'.
+src/components/infra/kubernetes/useKubernetesState.ts(17,10): error TS2614: Module '"../../../lib/api"' has no exported member 'AuthHops'. Did you mean to use 'import AuthHops from "../../../lib/api"' instead?
+src/components/Layout.tsx(96,34): error TS2339: Property 'getLicenseStatus' does not exist on type '{ checkHealth: () => Promise<{ data: StandardApiResponse<{ status: string; }>; }>; auth: { login: (credentials: { email: string; password: string; }) => Promise<{ data: StandardApiResponse<...>; }>; signup: (userInfo: { ...; }) => Promise<...>; }; ... 10 more ...; delete: <TResponse = unknown>(url: string, config?: ...'.
+src/components/services/DockerSettingsModal.tsx(87,34): error TS2339: Property 'service' does not exist on type 'AxiosInstance'.
+src/components/services/DockerSettingsModal.tsx(117,15): error TS2339: Property 'message' does not exist on type 'unknown'.
+src/components/services/DockerSettingsModal.tsx(410,34): error TS2339: Property 'service' does not exist on type 'AxiosInstance'.
+src/components/services/DockerSettingsModal.tsx(445,34): error TS2339: Property 'service' does not exist on type 'AxiosInstance'.
+src/components/services/ServiceAuthHandler.tsx(4,10): error TS2305: Module '"../../types/server"' has no exported member 'Server'.
+src/components/services/ServiceAuthHandler.tsx(21,7): error TS2322: Type '({ onAuthSuccess, onError }: ServiceAuthHandlerProps) => { handleAuthSubmitStatus: (values: AuthFormValues) => Promise<void>; handleAuthSubmit: (values: AuthFormValues) => Promise<...>; }' is not assignable to type 'FC<ServiceAuthHandlerProps>'.
+  Type '{ handleAuthSubmitStatus: (values: AuthFormValues) => Promise<void>; handleAuthSubmit: (values: AuthFormValues) => Promise<void>; }' is missing the following properties from type 'ReactElement<any, any>': type, props, key
+src/components/services/ServiceAuthHandler.tsx(27,41): error TS2551: Property 'getServiceStatusWithAuth' does not exist on type 'typeof import("D:/workspace/k8scontrol/frontend/src/lib/api/service")'. Did you mean 'getServiceStatus'?
+src/components/services/ServiceAuthHandler.tsx(55,41): error TS2339: Property 'deployServiceWithAuth' does not exist on type 'typeof import("D:/workspace/k8scontrol/frontend/src/lib/api/service")'.
+src/components/services/ServiceDeployHandler.tsx(3,10): error TS2305: Module '"../../types/server"' has no exported member 'Server'.
+src/components/services/ServiceDeployHandler.tsx(36,7): error TS2322: Type '({ service, serversResponse, setCurrentService, setSelectedServer, setHopsInfo, setAuthModalType, authForm, setAuthModalVisible, setLoading, setServices, currentService, selectedServer, hopsInfo, messageApi }: ServiceDeployHandlerProps) => { handleDeploy: (service: Service) => Promise<void>; handleAuthSubmitDeploy: ...' is not assignable to type 'FC<ServiceDeployHandlerProps>'.
+  Type '{ handleDeploy: (service: Service) => Promise<void>; handleAuthSubmitDeploy: (values: AuthFormValues) => Promise<void>; }' is missing the following properties from type 'ReactElement<any, any>': type, props, key
+src/components/services/ServiceDeployHandler.tsx(129,33): error TS4111: Property 'gitlab_username' comes from an index signature, so it must be accessed with ['gitlab_username'].
+src/components/services/ServiceDeployHandler.tsx(130,33): error TS4111: Property 'gitlab_password' comes from an index signature, so it must be accessed with ['gitlab_password'].
+src/components/services/ServiceDeployHandler.tsx(131,35): error TS4111: Property 'docker_username' comes from an index signature, so it must be accessed with ['docker_username'].
+src/components/services/ServiceDeployHandler.tsx(132,35): error TS4111: Property 'docker_password' comes from an index signature, so it must be accessed with ['docker_password'].
+src/components/services/ServiceDeployHandler.tsx(151,33): error TS4111: Property 'gitlab_username' comes from an index signature, so it must be accessed with ['gitlab_username'].
+src/components/services/ServiceDeployHandler.tsx(152,33): error TS4111: Property 'gitlab_password' comes from an index signature, so it must be accessed with ['gitlab_password'].
+src/components/services/ServiceDeployHandler.tsx(153,35): error TS4111: Property 'docker_username' comes from an index signature, so it must be accessed with ['docker_username'].
+src/components/services/ServiceDeployHandler.tsx(154,35): error TS4111: Property 'docker_password' comes from an index signature, so it must be accessed with ['docker_password'].
+src/components/services/ServiceFilterHandler.tsx(9,7): error TS2322: Type '({ services, onFilteredServicesChange }: ServiceFilterHandlerProps) => { handleSearch: (value: string) => void; handleStatusFilter: (value: string) => void; handleInfraFilter: (value: string) => void; handleSortChange: (value: string) => void; }' is not assignable to type 'FC<ServiceFilterHandlerProps>'.
+  Type '{ handleSearch: (value: string) => void; handleStatusFilter: (value: string) => void; handleInfraFilter: (value: string) => void; handleSortChange: (value: string) => void; }' is missing the following properties from type 'ReactElement<any, any>': type, props, key
+src/components/services/ServiceFilterHandler.tsx(17,17): error TS2339: Property 'description' does not exist on type 'Service'.
+src/components/services/ServiceFormModal.tsx(120,51): error TS2339: Property 'data' does not exist on type '{ infras: InfraItem[]; success: boolean; }'.
+src/components/services/ServiceFormModal.tsx(121,36): error TS2339: Property 'data' does not exist on type '{ infras: InfraItem[]; success: boolean; }'.
+src/components/services/ServiceStatusHandler.tsx(25,7): error TS2322: Type '({ onStatusUpdate, onError }: ServiceStatusHandlerProps) => { handleServiceStatus: (service: Service) => Promise<void>; handleRestart: (service: Service) => Promise<...>; handleStop: (service: Service) => Promise<...>; handleRemove: (service: Service) => Promise<...>; }' is not assignable to type 'FC<ServiceStatusHandlerProps>'.
+  Type '{ handleServiceStatus: (service: Service) => Promise<void>; handleRestart: (service: Service) => Promise<void>; handleStop: (service: Service) => Promise<...>; handleRemove: (service: Service) => Promise<...>; }' is missing the following properties from type 'ReactElement<any, any>': type, props, key
+src/components/services/ServiceStatusHandler.tsx(33,21): error TS2339: Property 'data' does not exist on type 'ServiceStatus'.
+  Property 'data' does not exist on type '"error"'.
+src/components/services/ServiceStatusHandler.tsx(34,33): error TS2339: Property 'data' does not exist on type 'ServiceStatus'.
+  Property 'data' does not exist on type '"error"'.
+src/components/services/ServiceStatusHandler.tsx(40,21): error TS2339: Property 'data' does not exist on type 'ServiceStatus'.
+  Property 'data' does not exist on type '"error"'.
+src/components/services/ServiceStatusHandler.tsx(56,21): error TS2339: Property 'data' does not exist on type 'void'.
+src/components/services/ServiceStatusHandler.tsx(63,21): error TS2339: Property 'data' does not exist on type 'void'.
+src/components/services/ServiceStatusHandler.tsx(79,21): error TS2339: Property 'data' does not exist on type 'void'.
+src/components/services/ServiceStatusHandler.tsx(86,21): error TS2339: Property 'data' does not exist on type 'void'.
+src/components/services/ServiceStatusHandler.tsx(100,41): error TS2339: Property 'removeService' does not exist on type 'typeof import("D:/workspace/k8scontrol/frontend/src/lib/api/service")'.
+src/components/services/ServiceTable-improved.tsx(8,33): error TS2307: Cannot find module './hooks/useServiceTable' or its corresponding type declarations.
+src/components/services/ServiceTable-improved.tsx(9,10): error TS2614: Module '"./ServiceTableActions"' has no exported member 'ServiceTableActions'. Did you mean to use 'import ServiceTableActions from "./ServiceTableActions"' instead?
+src/components/services/ServiceTable-improved.tsx(10,10): error TS2614: Module '"./ServiceStatusTag"' has no exported member 'ServiceStatusTag'. Did you mean to use 'import ServiceStatusTag from "./ServiceStatusTag"' instead?
+src/components/services/ServiceTable-improved.tsx(41,3): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(Component: FunctionComponent<ServiceRowProps>, propsAreEqual?: (prevProps: Readonly<ServiceRowProps>, nextProps: Readonly<ServiceRowProps>) => boolean): NamedExoticComponent<...>', gave the following error.
+    Argument of type '({ service, onShowDetail, onShowEdit, onShowDelete, onServiceAction }: ServiceRowProps) => { key: number; name: Element; status: Element; domain: string; infra_name: string; namespace: string; pods: string; created_at: string; actions: Element; }' is not assignable to parameter of type 'FunctionComponent<ServiceRowProps>'.
+      Type '{ key: number; name: Element; status: Element; domain: string; infra_name: string; namespace: string; pods: string; created_at: string; actions: Element; }' is missing the following properties from type 'ReactElement<any, any>': type, props
+  Overload 2 of 2, '(Component: ComponentType<any>, propsAreEqual?: (prevProps: Readonly<any>, nextProps: Readonly<any>) => boolean): MemoExoticComponent<ComponentType<any>>', gave the following error.
+    Argument of type '({ service, onShowDetail, onShowEdit, onShowDelete, onServiceAction }: ServiceRowProps) => { key: number; name: Element; status: Element; domain: string; infra_name: string; namespace: string; pods: string; created_at: string; actions: Element; }' is not assignable to parameter of type 'ComponentType<any>'.
+      Type '({ service, onShowDetail, onShowEdit, onShowDelete, onServiceAction }: ServiceRowProps) => { key: number; name: Element; status: Element; domain: string; infra_name: string; namespace: string; pods: string; created_at: string; actions: Element; }' is not assignable to type 'FunctionComponent<any>'.
+        Type '{ key: number; name: JSX.Element; status: JSX.Element; domain: string; infra_name: string; namespace: string; pods: string; created_at: string; actions: JSX.Element; }' is not assignable to type 'ReactElement<any, any>'.
+src/hooks/useEnhancedApi.ts(7,3): error TS2724: '"./useAsyncOperation"' has no exported member named 'UseAsyncOperationOptions'. Did you mean 'useAsyncOperation'?
+src/hooks/useEnhancedApi.ts(133,31): error TS2339: Property 'showErrorMessage' does not exist on type 'UseEnhancedApiOptions'.
+src/hooks/useEnhancedApi.ts(134,33): error TS2339: Property 'showSuccessMessage' does not exist on type 'UseEnhancedApiOptions'.
+src/hooks/useEnhancedApi.ts(135,29): error TS2339: Property 'successMessage' does not exist on type 'UseEnhancedApiOptions'.
+src/hooks/useEnhancedApi.ts(136,25): error TS2339: Property 'maxRetries' does not exist on type 'UseEnhancedApiOptions'.
+src/hooks/useEnhancedApi.ts(137,25): error TS2339: Property 'retryDelay' does not exist on type 'UseEnhancedApiOptions'.
+src/hooks/useEnhancedApi.ts(219,5): error TS2345: Argument of type '{ apiOptions?: ApiRequestOptions; executeOnMount?: boolean; deps?: React.DependencyList; showErrorMessage: boolean; }' is not assignable to parameter of type 'UseEnhancedApiOptions'.
+  Object literal may only specify known properties, and 'showErrorMessage' does not exist in type 'UseEnhancedApiOptions'.
+src/hooks/useEnhancedApi.ts(239,5): error TS2345: Argument of type '{ apiOptions?: ApiRequestOptions; executeOnMount?: boolean; deps?: React.DependencyList; showSuccessMessage: boolean; successMessage: string; }' is not assignable to parameter of type 'UseEnhancedApiOptions'.
+  Object literal may only specify known properties, and 'showSuccessMessage' does not exist in type 'UseEnhancedApiOptions'.
+src/hooks/useEnhancedApi.ts(253,5): error TS2345: Argument of type '{ apiOptions?: ApiRequestOptions; executeOnMount?: boolean; deps?: React.DependencyList; showSuccessMessage: boolean; successMessage: string; }' is not assignable to parameter of type 'UseEnhancedApiOptions'.
+  Object literal may only specify known properties, and 'showSuccessMessage' does not exist in type 'UseEnhancedApiOptions'.
+src/hooks/useEnhancedApi.ts(267,5): error TS2345: Argument of type '{ apiOptions?: ApiRequestOptions; executeOnMount?: boolean; deps?: React.DependencyList; showSuccessMessage: boolean; successMessage: string; }' is not assignable to parameter of type 'UseEnhancedApiOptions'.
+  Object literal may only specify known properties, and 'showSuccessMessage' does not exist in type 'UseEnhancedApiOptions'.
+src/hooks/useEnhancedApi.ts(291,5): error TS2345: Argument of type '{ apiOptions?: ApiRequestOptions; executeOnMount?: boolean; deps?: React.DependencyList; showSuccessMessage: boolean; successMessage: string; maxRetries: number; }' is not assignable to parameter of type 'UseEnhancedApiOptions'.
+  Object literal may only specify known properties, and 'showSuccessMessage' does not exist in type 'UseEnhancedApiOptions'.
+src/hooks/useInfraManagement-improved.ts(57,38): error TS2322: Type 'Promise<InfraItem[]>' is not assignable to type 'Promise<StandardApiResponse<unknown[]>>'.
+  Property 'success' is missing in type 'InfraItem[]' but required in type 'StandardApiResponse<unknown[]>'.
+src/hooks/useInfraManagement-improved.ts(75,30): error TS2339: Property 'id' does not exist on type 'unknown'.
+src/hooks/useInfraManagement-improved.ts(76,13): error TS2698: Spread types may only be created from object types.
+src/hooks/useInfraManagement-improved.ts(89,9): error TS2698: Spread types may only be created from object types.
+src/hooks/useInfraManagement-improved.ts(96,38): error TS2345: Argument of type '(data: {    name: string;    type: string;    info: string;}) => Promise<InfraItem>' is not assignable to parameter of type '(data: { name: string; type: string; info: string; }) => Promise<StandardApiResponse<unknown>>'.
+  Type 'Promise<InfraItem>' is not assignable to type 'Promise<StandardApiResponse<unknown>>'.
+    Property 'success' is missing in type 'InfraItem' but required in type 'StandardApiResponse<unknown>'.
+src/hooks/useInfraManagement-improved.ts(119,38): error TS2345: Argument of type '(data: {    name: string;    type: string;    info: string;    hops: Array<{        host: string;        port: number | string;        username: string;        password: string;    }>;}) => Promise<InfraItem>' is not assignable to parameter of type '(data: { name: string; type: string; info: string; hops: { host: string; port: string | number; username: string; password: string; }[]; }) => Promise<StandardApiResponse<unknown>>'.
+  Type 'Promise<InfraItem>' is not assignable to type 'Promise<StandardApiResponse<unknown>>'.
+src/hooks/useInfraManagement-improved.ts(143,5): error TS2345: Argument of type '({ id, ...data }: { id: number; } & UpdateInfraData) => Promise<InfraItem>' is not assignable to parameter of type '(data: { id: number; } & UpdateInfraData) => Promise<StandardApiResponse<unknown>>'.
+  Type 'Promise<InfraItem>' is not assignable to type 'Promise<StandardApiResponse<unknown>>'.
+src/hooks/useInfraManagement-improved.ts(170,5): error TS2345: Argument of type '{ successMessage: string; apiOptions: { showSuccessMessage: true; }; }' is not assignable to parameter of type 'UseEnhancedApiOptions'.
+  Object literal may only specify known properties, and 'successMessage' does not exist in type 'UseEnhancedApiOptions'.
+src/hooks/useInfraManagement-improved.ts(206,37): error TS2339: Property 'state' does not exist on type '(...apiCalls: (() => Promise<unknown>)[]) => Promise<unknown[]>'.
+src/hooks/useServiceData.ts(73,44): error TS2339: Property 'service' does not exist on type 'AxiosInstance'.
+src/hooks/useServiceData.ts(113,19): error TS2339: Property 'service' does not exist on type 'AxiosInstance'.
+src/hooks/useServiceData.ts(131,42): error TS2339: Property 'service' does not exist on type 'AxiosInstance'.
+src/hooks/useServiceDetail.ts(107,36): error TS2339: Property 'kubernetes' does not exist on type 'AxiosInstance'.
+src/hooks/useServiceDetail.ts(227,38): error TS2339: Property 'docker' does not exist on type 'AxiosInstance'.
+src/hooks/useServiceDetail.ts(351,38): error TS2339: Property 'docker' does not exist on type 'AxiosInstance'.
+src/hooks/useServiceOperations.ts(32,36): error TS2339: Property 'service' does not exist on type 'AxiosInstance'.
+src/hooks/useServiceOperations.ts(59,36): error TS2339: Property 'kubernetes' does not exist on type 'AxiosInstance'.
+src/hooks/useServiceOperations.ts(86,36): error TS2339: Property 'kubernetes' does not exist on type 'AxiosInstance'.
+src/hooks/useServiceOperations.ts(111,36): error TS2339: Property 'kubernetes' does not exist on type 'AxiosInstance'.
+src/hooks/useServiceOperations.ts(136,36): error TS2339: Property 'kubernetes' does not exist on type 'AxiosInstance'.
+src/hooks/useServiceOperations.ts(166,36): error TS2339: Property 'service' does not exist on type 'AxiosInstance'.
+src/lib/api/api-helpers.ts(163,7): error TS2345: Argument of type 'Error' is not assignable to parameter of type 'Record<string, unknown>'.
+  Index signature for type 'string' is missing in type 'Error'.
+src/lib/api/api-helpers.ts(342,9): error TS2345: Argument of type 'Error' is not assignable to parameter of type 'Record<string, unknown>'.
+src/lib/api/docker.ts(248,27): error TS2345: Argument of type 'DockerContainerControlRequest' is not assignable to parameter of type 'Record<string, unknown>'.
+  Index signature for type 'string' is missing in type 'DockerContainerControlRequest'.
+src/lib/api/docker.ts(292,27): error TS2345: Argument of type 'DockerContainerControlRequest' is not assignable to parameter of type 'Record<string, unknown>'.
+src/lib/api/enhanced-api-client.ts(189,7): error TS2552: Cannot find name 'responseData'. Did you mean 'Response'?
+src/lib/api/enhanced-api-client.ts(196,7): error TS2345: Argument of type '{ message: string; statusCode: number; url: string; action: any; stack: string; }' is not assignable to parameter of type 'Error'.
+  Object literal may only specify known properties, and 'statusCode' does not exist in type 'Error'.
+src/lib/api/index.ts(20,14): error TS2300: Duplicate identifier 'apiClient'.
+src/lib/api/index.ts(97,17): error TS2300: Duplicate identifier 'apiClient'.
+src/lib/api/infra.ts(14,13): error TS2352: Conversion of type 'StandardApiResponse<{ infras: InfraItem[]; }>' to type '{ infras: InfraItem[]; }' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Property 'infras' is missing in type 'StandardApiResponse<{ infras: InfraItem[]; }>' but required in type '{ infras: InfraItem[]; }'.
+src/lib/api/kubernetes-improved.ts(86,26): error TS7030: Not all code paths return a value.
+src/lib/api/kubernetes-improved.ts(100,30): error TS7030: Not all code paths return a value.
+src/lib/api/kubernetes-improved.ts(154,36): error TS7030: Not all code paths return a value.
+src/lib/api/kubernetes-improved.ts(197,35): error TS7030: Not all code paths return a value.
+src/lib/api/kubernetes-improved.ts(260,27): error TS7030: Not all code paths return a value.
+src/lib/api/kubernetes-improved.ts(323,27): error TS7030: Not all code paths return a value.
+src/lib/api/kubernetes-improved.ts(370,27): error TS7030: Not all code paths return a value.
+src/lib/api/kubernetes-improved.ts(415,28): error TS7030: Not all code paths return a value.
+src/lib/api/kubernetes-improved.ts(456,27): error TS7030: Not all code paths return a value.
+src/lib/api/kubernetes-improved.ts(497,30): error TS7030: Not all code paths return a value.
+src/lib/api/kubernetes-improved.ts(552,35): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Error'.
+  Type '{}' is missing the following properties from type 'Error': name, message
+src/lib/api/kubernetes-improved.ts(577,34): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Error'.
+src/lib/api/kubernetes-improved.ts(599,35): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Error'.
+src/lib/api/kubernetes-improved.ts(611,5): error TS7030: Not all code paths return a value.
+src/lib/api/kubernetes-improved.ts(630,5): error TS7030: Not all code paths return a value.
+src/lib/api/kubernetes.ts(854,7): error TS2352: Conversion of type 'DeployKubernetesParams' to type 'Record<string, unknown>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Index signature for type 'string' is missing in type 'DeployKubernetesParams'.
+src/lib/api/kubernetes.ts(879,7): error TS2352: Conversion of type 'DeployKubernetesParams' to type 'Record<string, unknown>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+src/lib/api/kubernetes/pod.ts(48,7): error TS2352: Conversion of type 'DeployKubernetesParams' to type 'Record<string, unknown>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Index signature for type 'string' is missing in type 'DeployKubernetesParams'.
+src/lib/api/project.ts(47,9): error TS2345: Argument of type '{ action: string; parameters: { projectId: number; }; }' is not assignable to parameter of type 'ProjectApiResponse<GitLabBranch[]>'.
+  Object literal may only specify known properties, and 'action' does not exist in type 'ProjectApiResponse<GitLabBranch[]>'.
+src/lib/api/project.ts(52,26): error TS2339: Property 'data' does not exist on type 'unknown'.
+src/lib/api/project.ts(75,9): error TS2345: Argument of type '{ action: string; parameters: { projectId: number; branchName: string; }; }' is not assignable to parameter of type 'ProjectApiResponse<GitLabCommit[]>'.
+  Object literal may only specify known properties, and 'action' does not exist in type 'ProjectApiResponse<GitLabCommit[]>'.
+src/lib/api/project.ts(80,26): error TS2339: Property 'data' does not exist on type 'unknown'.
+src/lib/api/service.ts(42,9): error TS2345: Argument of type '{ action: string; parameters: {}; }' is not assignable to parameter of type 'ServiceApiResponse<Service[]>'.
+  Object literal may only specify known properties, and 'action' does not exist in type 'ServiceApiResponse<Service[]>'.
+src/lib/api/service.ts(47,26): error TS2339: Property 'data' does not exist on type 'unknown'.
+src/lib/api/service.ts(79,9): error TS2345: Argument of type '{ action: string; parameters: { service_id: number; }; }' is not assignable to parameter of type 'ServiceApiResponse<ServiceStatus>'.
+  Object literal may only specify known properties, and 'action' does not exist in type 'ServiceApiResponse<ServiceStatus>'.
+src/lib/api/service.ts(84,24): error TS2339: Property 'data' does not exist on type 'unknown'.
+src/lib/api/service.ts(88,26): error TS2339: Property 'data' does not exist on type 'unknown'.
+src/lib/api/service.ts(103,9): error TS2345: Argument of type '{ action: string; parameters: CreateServiceRequest; }' is not assignable to parameter of type 'ServiceApiResponse<Service>'.
+  Object literal may only specify known properties, and 'action' does not exist in type 'ServiceApiResponse<Service>'.
+src/lib/api/service.ts(108,24): error TS2339: Property 'data' does not exist on type 'unknown'.
+src/lib/api/service.ts(112,26): error TS2339: Property 'data' does not exist on type 'unknown'.
+src/lib/api/service.ts(128,9): error TS2345: Argument of type '{ action: string; parameters: { name?: string; description?: string; dockerCompose?: string; environment?: Record<string, string>; ports?: number[]; service_id: number; }; }' is not assignable to parameter of type 'ServiceApiResponse<Service>'.
+  Object literal may only specify known properties, and 'action' does not exist in type 'ServiceApiResponse<Service>'.
+src/lib/api/service.ts(133,24): error TS2339: Property 'data' does not exist on type 'unknown'.
+src/lib/api/service.ts(137,26): error TS2339: Property 'data' does not exist on type 'unknown'.
+src/lib/api/service.ts(148,7): error TS2345: Argument of type '{ action: string; parameters: { service_id: number; }; }' is not assignable to parameter of type 'ServiceApiResponse<any>'.
+  Object literal may only specify known properties, and 'action' does not exist in type 'ServiceApiResponse<any>'.
+src/lib/api/service.ts(163,7): error TS2345: Argument of type '{ action: string; parameters: DeployServiceRequest; }' is not assignable to parameter of type 'ServiceApiResponse<any>'.
+  Object literal may only specify known properties, and 'action' does not exist in type 'ServiceApiResponse<any>'.
+src/lib/api/service.ts(176,7): error TS2345: Argument of type '{ action: string; parameters: { service_id: number; }; }' is not assignable to parameter of type 'ServiceApiResponse<any>'.
+  Object literal may only specify known properties, and 'action' does not exist in type 'ServiceApiResponse<any>'.
+src/lib/api/service.ts(189,7): error TS2345: Argument of type '{ action: string; parameters: { service_id: number; }; }' is not assignable to parameter of type 'ServiceApiResponse<any>'.
+  Object literal may only specify known properties, and 'action' does not exist in type 'ServiceApiResponse<any>'.
+src/lib/api/service.ts(202,7): error TS2345: Argument of type '{ action: string; parameters: { service_id: number; }; }' is not assignable to parameter of type 'ServiceApiResponse<any>'.
+  Object literal may only specify known properties, and 'action' does not exist in type 'ServiceApiResponse<any>'.
+src/lib/api/service.ts(220,9): error TS2345: Argument of type '{ action: string; parameters: { service_id: number; lines: number; }; }' is not assignable to parameter of type 'ServiceApiResponse<{ logs: string; }>'.
+  Object literal may only specify known properties, and 'action' does not exist in type 'ServiceApiResponse<{ logs: string; }>'.
+src/lib/api/service.ts(225,26): error TS2339: Property 'data' does not exist on type 'unknown'.
+src/lib/api/user.ts(78,24): error TS2339: Property 'success' does not exist on type 'unknown'.
+src/lib/api/user.ts(78,50): error TS2339: Property 'data' does not exist on type 'unknown'.
+src/lib/api/user.ts(83,11): error TS2739: Type '{ id: number; username: string; email: string; displayName: string; }' is missing the following properties from type 'User': createdAt, updatedAt
+src/lib/api/user.ts(91,28): error TS2339: Property 'data' does not exist on type 'unknown'.
+src/lib/api/user.ts(105,7): error TS2345: Argument of type 'SignupRequest' is not assignable to parameter of type 'UserApiResponse<User>'.
+  Property 'success' is missing in type 'SignupRequest' but required in type 'UserApiResponse<User>'.
+src/lib/api/user.ts(108,24): error TS2339: Property 'success' does not exist on type 'unknown'.
+src/lib/api/user.ts(108,50): error TS2339: Property 'data' does not exist on type 'unknown'.
+src/lib/api/user.ts(112,26): error TS2339: Property 'data' does not exist on type 'unknown'.
+src/pages/backup/BackupAuthHandler.tsx(88,52): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Error'.
+src/pages/backup/BackupDataManager.tsx(47,26): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'SetStateAction<InfraItem[]>'.
+src/pages/backup/BackupDataManager.tsx(48,18): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'SetStateAction<Server[]>'.
+src/pages/backup/BackupDataManager.tsx(50,55): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Error'.
+src/pages/backup/BackupDataManager.tsx(67,54): error TS2345: Argument of type 'StandardApiResponse<unknown>' is not assignable to parameter of type 'Record<string, unknown>'.
+  Index signature for type 'string' is missing in type 'StandardApiResponse<unknown>'.
+src/pages/backup/BackupDataManager.tsx(71,49): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Error'.
+src/pages/backup/BackupDataManager.tsx(92,55): error TS2345: Argument of type 'StandardApiResponse<unknown>' is not assignable to parameter of type 'Record<string, unknown>'.
+src/pages/backup/BackupDataManager.tsx(96,50): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Error'.
+src/pages/backup/BackupDataManager.tsx(114,33): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'BackupInstallStatus'.
+  Type '{}' is missing the following properties from type 'BackupInstallStatus': minio, velero
+src/pages/backup/BackupDataManager.tsx(116,55): error TS2345: Argument of type 'StandardApiResponse<unknown>' is not assignable to parameter of type 'Record<string, unknown>'.
+src/pages/backup/BackupDataManager.tsx(120,55): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Error'.
+src/pages/backup/BackupDataManager.tsx(138,54): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Error'.
+src/pages/backup/BackupDataManager.tsx(148,21): error TS2339: Property 'nodes' does not exist on type 'InfraItem'.
+src/pages/backup/BackupDataManager.tsx(150,34): error TS2339: Property 'nodes' does not exist on type 'InfraItem'.
+src/pages/backup/BackupDataManager.tsx(161,57): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Error'.
+src/pages/backup/BackupDataManager.tsx(186,53): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Error'.
+src/pages/backup/BackupDataManager.tsx(212,50): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Error'.
+src/pages/backup/BackupDataManager.tsx(241,50): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Error'.
+src/pages/backup/BackupDataManager.tsx(267,51): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Error'.
+src/pages/backup/BackupStatusManager.tsx(41,19): error TS7030: Not all code paths return a value.
+src/pages/backup/BackupStatusManager.tsx(42,27): error TS7030: Not all code paths return a value.
+src/pages/backup/BackupStatusManager.tsx(45,17): error TS2367: This comparison appears to be unintentional because the types '"completed" | "failed" | "creating"' and '"InProgress"' have no overlap.
+src/pages/backup/BackupStatusManager.tsx(45,51): error TS2367: This comparison appears to be unintentional because the types '"completed" | "failed" | "creating"' and '"Running"' have no overlap.
+src/pages/backup/BackupStatusManager.tsx(60,14): error TS2367: This comparison appears to be unintentional because the types '"completed" | "failed" | "creating"' and '"InProgress"' have no overlap.
+src/pages/backup/BackupStatusManager.tsx(61,15): error TS2367: This comparison appears to be unintentional because the types '"completed" | "failed" | "creating"' and '"Running"' have no overlap.
+src/pages/backup/BackupStatusManager.tsx(66,17): error TS2367: This comparison appears to be unintentional because the types '"completed" | "failed" | "creating"' and '"Completed"' have no overlap.
+src/pages/backup/BackupStatusManager.tsx(68,24): error TS2367: This comparison appears to be unintentional because the types '"completed" | "failed" | "creating"' and '"Failed"' have no overlap.
+src/pages/backup/BackupStatusManager.tsx(73,57): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Error'.
+src/pages/backup/BackupStatusManager.tsx(87,19): error TS7030: Not all code paths return a value.
+src/pages/backup/BackupStatusManager.tsx(88,27): error TS7030: Not all code paths return a value.
+src/pages/backup/BackupStatusManager.tsx(91,53): error TS2367: This comparison appears to be unintentional because the types '"New" | "Completed" | "Failed" | "PartiallyFailed"' and '"Running"' have no overlap.
+src/pages/backup/BackupStatusManager.tsx(109,15): error TS2367: This comparison appears to be unintentional because the types '"New" | "Completed" | "Failed" | "PartiallyFailed"' and '"Running"' have no overlap.
+src/pages/backup/BackupStatusManager.tsx(125,58): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Error'.
+src/pages/backup/BackupStatusManager.tsx(141,27): error TS7030: Not all code paths return a value.
+src/pages/backup/BackupStatusManager.tsx(158,56): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Error'.
+src/pages/backup/BackupStatusManager.tsx(226,17): error TS2367: This comparison appears to be unintentional because the types '"completed" | "failed" | "creating"' and '"InProgress"' have no overlap.
+src/pages/backup/BackupStatusManager.tsx(226,51): error TS2367: This comparison appears to be unintentional because the types '"completed" | "failed" | "creating"' and '"Running"' have no overlap.
+src/pages/backup/BackupStatusManager.tsx(229,53): error TS2367: This comparison appears to be unintentional because the types '"New" | "Completed" | "Failed" | "PartiallyFailed"' and '"Running"' have no overlap.
+src/pages/backup/BackupTabs.tsx(143,31): error TS2367: This comparison appears to be unintentional because the types '"completed" | "failed" | "creating"' and '"Completed"' have no overlap.
+src/pages/backup/BackupTabs.tsx(160,25): error TS2367: This comparison appears to be unintentional because the types '"completed" | "failed" | "creating"' and '"InProgress"' have no overlap.
+src/pages/backup/BackupTabs.tsx(161,25): error TS2367: This comparison appears to be unintentional because the types '"completed" | "failed" | "creating"' and '"Running"' have no overlap.
+src/pages/BackupManageNew.tsx(220,41): error TS2345: Argument of type '{ hops: any[]; name?: string; infra_id: number; namespace: string; schedule?: string; retention?: string; server_username: string; server_password: string; }' is not assignable to parameter of type 'CreateBackupParams'.
+  Object literal may only specify known properties, and 'hops' does not exist in type 'CreateBackupParams'.
+src/pages/BackupManageNew.tsx(333,9): error TS2322: Type 'BackupStorageWithInfra[]' is not assignable to type 'BackupStorage[]'.
+  Type 'BackupStorageWithInfra' is missing the following properties from type 'BackupStorage': name, bucket, region, use_ssl
+src/pages/BackupManageNew.tsx(338,9): error TS2322: Type '{ visible: boolean; onCancel: () => void; onSubmit: (formData: any) => Promise<void>; loading: boolean; namespaces: string[]; selectedInfraId: string; }' is not assignable to type 'IntrinsicAttributes & BackupFormProps'.
+  Property 'visible' does not exist on type 'IntrinsicAttributes & BackupFormProps'.
+src/pages/BackupManageNew.tsx(370,9): error TS2322: Type '{ visible: boolean; onCancel: () => void; onConfirm: (formData: any) => Promise<void>; loading: boolean; backup: Backup; }' is not assignable to type 'IntrinsicAttributes & DeleteBackupModalProps'.
+  Property 'onConfirm' does not exist on type 'IntrinsicAttributes & DeleteBackupModalProps'.
+src/pages/BackupManageNew.tsx(402,9): error TS2322: Type '{ visible: boolean; onCancel: () => void; onSubmit: (formData: any) => Promise<void>; loading: boolean; backup: Backup; namespaces: string[]; selectedInfraId: string; }' is not assignable to type 'IntrinsicAttributes & RestoreBackupModalProps'.
+  Property 'onSubmit' does not exist on type 'IntrinsicAttributes & RestoreBackupModalProps'.
+src/pages/InfraSettingsModal.tsx(69,17): error TS2339: Property 'kubernetes' does not exist on type 'AxiosInstance'.
+src/pages/ProjectDetailPage.tsx(18,24): error TS2440: Import declaration conflicts with local declaration of 'GitLabCommit'.
+src/pages/ProjectDetailPage.tsx(68,43): error TS2339: Property 'getBranches' does not exist on type '{ getProjects: () => Promise<GitLabProject[]>; getProject: (projectId: number) => Promise<GitLabProject>; getProjectBranches: (projectId: number) => Promise<...>; getProjectCommits: (projectId: number, branchName?: string) => Promise<...>; createProject: (projectData: Partial<...>) => Promise<...>; updateProject: (p...'.
+src/pages/ProjectDetailPage.tsx(110,43): error TS2339: Property 'getCommits' does not exist on type '{ getProjects: () => Promise<GitLabProject[]>; getProject: (projectId: number) => Promise<GitLabProject>; getProjectBranches: (projectId: number) => Promise<...>; getProjectCommits: (projectId: number, branchName?: string) => Promise<...>; createProject: (projectData: Partial<...>) => Promise<...>; updateProject: (p...'.
+src/pages/ProjectManage.tsx(53,38): error TS2339: Property 'saveGitLabToken' does not exist on type '{ getUsers: () => Promise<User[]>; getUser: (userId: number) => Promise<User>; getCurrentUser: () => Promise<User>; login: (loginData: LoginRequest) => Promise<...>; ... 4 more ...; deleteUser: (userId: number) => Promise<...>; }'.
+src/pages/ProjectManage.tsx(118,41): error TS2551: Property 'getMyProjects' does not exist on type '{ getProjects: () => Promise<GitLabProject[]>; getProject: (projectId: number) => Promise<GitLabProject>; getProjectBranches: (projectId: number) => Promise<...>; getProjectCommits: (projectId: number, branchName?: string) => Promise<...>; createProject: (projectData: Partial<...>) => Promise<...>; updateProject: (p...'. Did you mean 'getProjects'?
+src/pages/ProjectManage.tsx(144,40): error TS2339: Property 'checkGitLabStatus' does not exist on type '{ getUsers: () => Promise<User[]>; getUser: (userId: number) => Promise<User>; getCurrentUser: () => Promise<User>; login: (loginData: LoginRequest) => Promise<...>; ... 4 more ...; deleteUser: (userId: number) => Promise<...>; }'.
+src/pages/services/ServicesAuthManager.tsx(187,22): error TS2339: Property 'host' does not exist on type 'Server'.
+src/pages/services/ServicesAuthManager.tsx(187,53): error TS2339: Property 'stored_credentials' does not exist on type 'Server'.
+src/pages/services/ServicesAuthManager.tsx(202,24): error TS2339: Property 'host' does not exist on type 'Server'.
+src/pages/services/ServicesAuthManager.tsx(209,24): error TS2339: Property 'host' does not exist on type 'Server'.
+src/pages/services/ServicesDataManager.tsx(27,35): error TS2339: Property 'infras' does not exist on type 'InfraItem[]'.
+src/pages/services/ServicesDataManager.tsx(43,42): error TS2339: Property 'kubernetes' does not exist on type 'AxiosInstance'.
+src/pages/services/ServicesDataManager.tsx(83,36): error TS2339: Property 'kubernetes' does not exist on type 'AxiosInstance'.
+src/pages/services/ServicesDataManager.tsx(105,36): error TS2339: Property 'kubernetes' does not exist on type 'AxiosInstance'.
+src/pages/services/ServicesDataManager.tsx(127,57): error TS2345: Argument of type 'Partial<Service>' is not assignable to parameter of type 'CreateServiceRequest'.
+  Property 'infraId' is missing in type 'Partial<Service>' but required in type 'CreateServiceRequest'.
+src/pages/services/ServicesDataManager.tsx(173,57): error TS2345: Argument of type 'string | number' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+src/pages/services/ServicesDataManager.tsx(175,13): error TS1345: An expression of type 'void' cannot be tested for truthiness.
+src/pages/services/ServicesDataManager.tsx(196,43): error TS2551: Property 'getServiceById' does not exist on type 'typeof import("D:/workspace/k8scontrol/frontend/src/lib/api/service")'. Did you mean 'getService'?
+src/pages/services/ServicesDataManager.tsx(214,43): error TS2551: Property 'updateServiceStatus' does not exist on type 'typeof import("D:/workspace/k8scontrol/frontend/src/lib/api/service")'. Did you mean 'updateService'?
+src/pages/services/ServicesFilterManager.tsx(30,19): error TS2339: Property 'description' does not exist on type 'Service'.
+src/pages/services/ServicesOperationsManager.tsx(63,48): error TS2339: Property 'getServiceStatus' does not exist on type 'typeof import("D:/workspace/k8scontrol/frontend/src/lib/api/kubernetes")'.
+src/pages/services/ServicesOperationsManager.tsx(70,44): error TS2339: Property 'getServiceStatus' does not exist on type 'typeof import("D:/workspace/k8scontrol/frontend/src/lib/api/docker")'.
+src/pages/services/ServicesOperationsManager.tsx(126,48): error TS2339: Property 'deployService' does not exist on type 'typeof import("D:/workspace/k8scontrol/frontend/src/lib/api/kubernetes")'.
+src/pages/services/ServicesOperationsManager.tsx(133,44): error TS2339: Property 'deployService' does not exist on type 'typeof import("D:/workspace/k8scontrol/frontend/src/lib/api/docker")'.
+src/pages/services/ServicesOperationsManager.tsx(175,49): error TS2551: Property 'restartService' does not exist on type 'typeof import("D:/workspace/k8scontrol/frontend/src/lib/api/kubernetes")'. Did you mean 'restartServer'?
+src/pages/services/ServicesOperationsManager.tsx(182,45): error TS2339: Property 'restartService' does not exist on type 'typeof import("D:/workspace/k8scontrol/frontend/src/lib/api/docker")'.
+src/pages/services/ServicesOperationsManager.tsx(224,46): error TS2551: Property 'stopService' does not exist on type 'typeof import("D:/workspace/k8scontrol/frontend/src/lib/api/kubernetes")'. Did you mean 'stopServer'?
+src/pages/services/ServicesOperationsManager.tsx(231,42): error TS2339: Property 'stopService' does not exist on type 'typeof import("D:/workspace/k8scontrol/frontend/src/lib/api/docker")'.
+src/pages/services/ServicesOperationsManager.tsx(269,46): error TS2339: Property 'getServiceLogs' does not exist on type 'typeof import("D:/workspace/k8scontrol/frontend/src/lib/api/kubernetes")'.
+src/pages/services/ServicesOperationsManager.tsx(276,42): error TS2339: Property 'getServiceLogs' does not exist on type 'typeof import("D:/workspace/k8scontrol/frontend/src/lib/api/docker")'.
+src/pages/ServicesNew.tsx(178,40): error TS2339: Property 'host' does not exist on type 'Server'.
+src/pages/ServicesNew.tsx(184,43): error TS2339: Property 'host' does not exist on type 'Server'.
+src/pages/ServicesNew.tsx(214,40): error TS2339: Property 'host' does not exist on type 'Server'.
+src/pages/ServicesNew.tsx(219,43): error TS2339: Property 'host' does not exist on type 'Server'.
+src/pages/ServicesNew.tsx(249,44): error TS2339: Property 'host' does not exist on type 'Server'.
+src/pages/ServicesNew.tsx(255,38): error TS2339: Property 'host' does not exist on type 'Server'.
+src/pages/ServicesNew.tsx(289,44): error TS2339: Property 'host' does not exist on type 'Server'.
+src/pages/ServicesNew.tsx(295,38): error TS2339: Property 'host' does not exist on type 'Server'.
+src/pages/ServicesNew.tsx(343,48): error TS2345: Argument of type 'ServiceFormValues' is not assignable to parameter of type 'Partial<Service>'.
+  Types of property 'docker_compose_config' are incompatible.
+    Type 'Record<string, unknown>' is not assignable to type 'string'.
+src/pages/ServicesNew.tsx(345,29): error TS2345: Argument of type 'ServiceFormValues' is not assignable to parameter of type 'Partial<Service>'.
+src/pages/ServicesNew.tsx(441,13): error TS2322: Type '{ current: number; pageSize: number; total: number; onChange: (page: number) => void; onShowSizeChange: (current: number, size: number) => void; }' is not assignable to type 'PaginationParams'.
+  Object literal may only specify known properties, and 'current' does not exist in type 'PaginationParams'.
+src/pages/ServicesNew.tsx(478,9): error TS2322: Type '{ visible: boolean; service: Service; onCancel: () => void; onEdit: (service: Service) => void; }' is not assignable to type 'IntrinsicAttributes & ServiceDetailModalProps'.
+  Property 'onEdit' does not exist on type 'IntrinsicAttributes & ServiceDetailModalProps'.
+src/types/service.ts(105,10): error TS1205: Re-exporting a type when the '--isolatedModules' flag is provided requires using 'export type'.

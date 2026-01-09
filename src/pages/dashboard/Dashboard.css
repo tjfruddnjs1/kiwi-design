@@ -1,0 +1,1975 @@
+.pipeline-outer-card {
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.pipeline-outer-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+.dashboard-container {
+  padding: 24px;
+  background: #f0f2f5;
+  min-height: calc(100vh - 64px);
+}
+
+.dashboard-header {
+  margin-bottom: 24px;
+  padding: 0 8px;
+}
+
+.dashboard-header h2 {
+  margin-bottom: 8px;
+  color: #001529;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 16px;
+  }
+
+  .dashboard-header {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard-container {
+    padding: 12px;
+  }
+}
+
+/* Card hover effects */
+.ant-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.ant-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Statistics card styling */
+.ant-statistic {
+  text-align: center;
+}
+
+.ant-statistic-content {
+  font-size: 28px !important;
+}
+
+.ant-statistic-title {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #666;
+}
+
+/* Progress bar customization */
+.ant-progress-line {
+  margin-bottom: 0;
+}
+
+.ant-progress-text {
+  font-size: 12px;
+  color: #666;
+}
+
+/* List styling */
+.ant-list-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ant-list-item:last-child {
+  border-bottom: none;
+}
+
+.ant-list-item-meta-title {
+  margin-bottom: 4px;
+}
+
+.ant-list-item-meta-description {
+  color: #666;
+  font-size: 12px;
+}
+
+/* Tag styling */
+.ant-tag {
+  margin: 0;
+  border-radius: 12px;
+  font-size: 11px;
+  padding: 2px 8px;
+  line-height: 1.2;
+}
+
+/* Button styling */
+.ant-btn {
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.ant-btn-primary {
+  background: linear-gradient(135deg, #1890ff 0%, #40a9ff 100%);
+  border: none;
+}
+
+.ant-btn-primary:hover {
+  background: linear-gradient(135deg, #40a9ff 0%, #1890ff 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3);
+}
+
+/* Quick action buttons */
+.ant-card .ant-btn {
+  transition: all 0.3s ease;
+}
+
+.ant-card .ant-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* AI Agent Card Styling */
+.ai-agent-card {
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9ff 100%);
+}
+
+.ai-agent-card:hover {
+  border-color: #722ed1;
+  box-shadow: 0 8px 24px rgba(114, 46, 209, 0.12);
+  transform: translateY(-2px);
+}
+
+.ai-agent-card .ant-card-body {
+  padding: 16px;
+}
+
+.ai-agent-card .ant-btn-primary {
+  background: linear-gradient(135deg, #722ed1 0%, #9254de 100%);
+  border: none;
+}
+
+.ai-agent-card .ant-btn-primary:hover {
+  background: linear-gradient(135deg, #9254de 0%, #722ed1 100%);
+  box-shadow: 0 4px 12px rgba(114, 46, 209, 0.4);
+}
+
+/* Workflow Card Styling */
+.workflow-card {
+  transition: all 0.3s ease;
+  background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+}
+
+.workflow-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.workflow-card .ant-card-body {
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Pipeline Status Styling */
+.ant-steps-item-process .ant-steps-item-icon {
+  background: linear-gradient(135deg, #1890ff 0%, #40a9ff 100%);
+  border-color: #1890ff;
+}
+
+.ant-steps-item-process .ant-steps-item-icon .ant-steps-icon {
+  color: white;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon {
+  background: linear-gradient(135deg, #52c41a 0%, #73d13d 100%);
+  border-color: #52c41a;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon .ant-steps-icon {
+  color: white;
+}
+
+/* Security & Performance Metrics */
+.monitoring-metric {
+  padding: 12px;
+  background: linear-gradient(145deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 8px;
+  border-left: 4px solid #1890ff;
+  margin-bottom: 8px;
+}
+
+/* Timeline Styling */
+.ant-timeline-item-content {
+  padding-left: 16px;
+}
+
+.ant-timeline-item-tail {
+  border-left: 2px solid #e8e8e8;
+}
+
+.ant-timeline .ant-timeline-item-last .ant-timeline-item-tail {
+  display: none;
+}
+
+/* Badge and Tag Enhancements */
+.ant-badge-status-dot {
+  width: 8px;
+  height: 8px;
+}
+
+.ant-tag {
+  border-radius: 12px;
+  font-size: 11px;
+  padding: 2px 8px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Dashboard Header Enhancements */
+.dashboard-header {
+  background: linear-gradient(135deg, #f0f2ff 0%, #ffffff 100%);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+  border: 1px solid #e6f0ff;
+}
+
+.dashboard-header h2 {
+  margin-bottom: 8px;
+  color: #001529;
+  font-weight: 600;
+}
+
+.dashboard-header .ant-typography {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Card Title Enhancements */
+.ant-card-head-title {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Loading and Status Indicators */
+.ant-spin-dot-item {
+  background-color: #722ed1;
+}
+
+.ant-btn-loading .ant-btn-loading-icon {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Enhanced Hover Effects */
+.ant-card-hoverable {
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ant-card-hoverable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Progress Bar Enhancements */
+.ant-progress-line {
+  margin-bottom: 0;
+}
+
+.ant-progress-bg {
+  border-radius: 10px;
+}
+
+.ant-progress-outer {
+  padding-right: 0;
+  margin-right: 0;
+}
+
+/* Status Color Variations */
+.status-excellent {
+  color: #52c41a;
+  background: linear-gradient(135deg, #f6ffed 0%, #f6ffed 100%);
+}
+
+.status-good {
+  color: #1890ff;
+  background: linear-gradient(135deg, #f0f5ff 0%, #f0f5ff 100%);
+}
+
+.status-warning {
+  color: #fa8c16;
+  background: linear-gradient(135deg, #fff7e6 0%, #fff7e6 100%);
+}
+
+.status-critical {
+  color: #f5222d;
+  background: linear-gradient(135deg, #fff2f0 0%, #fff2f0 100%);
+}
+
+/* Responsive Enhancements */
+@media (max-width: 1200px) {
+  .workflow-card {
+    height: auto;
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ant-statistic-content {
+    font-size: 24px !important;
+  }
+
+  .dashboard-header h2 {
+    font-size: 20px;
+  }
+
+  .dashboard-header {
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+
+  .ai-agent-card .ant-card-body {
+    padding: 12px;
+  }
+
+  .workflow-card .ant-card-body {
+    padding: 16px;
+  }
+
+  .monitoring-metric {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ant-statistic-content {
+    font-size: 20px !important;
+  }
+
+  .dashboard-header h2 {
+    font-size: 18px;
+  }
+
+  .ant-statistic-title {
+    font-size: 12px;
+  }
+
+  .dashboard-header {
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  .dashboard-container {
+    padding: 12px;
+  }
+
+  .workflow-card {
+    height: auto;
+    min-height: 180px;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(114, 46, 209, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(114, 46, 209, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(114, 46, 209, 0);
+  }
+}
+
+.ai-agent-card[data-status='running'] {
+  animation: pulse 2s infinite;
+}
+
+/* Accessibility Enhancements */
+.ant-btn:focus,
+.ant-card:focus {
+  outline: 2px solid #1890ff;
+  outline-offset: 2px;
+}
+
+/* Integrated Dashboard Specific Styles */
+.integrated-overview .ant-card {
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.integrated-overview .ant-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Build Status Cards */
+.build-status-card {
+  border-left: 4px solid;
+  border-radius: 8px !important;
+}
+
+.build-status-card.success {
+  border-left-color: #52c41a;
+  background: linear-gradient(135deg, #f6ffed 0%, #ffffff 100%);
+}
+
+.build-status-card.building {
+  border-left-color: #1890ff;
+  background: linear-gradient(135deg, #f0f5ff 0%, #ffffff 100%);
+}
+
+.build-status-card.failed {
+  border-left-color: #f5222d;
+  background: linear-gradient(135deg, #fff2f0 0%, #ffffff 100%);
+}
+
+.build-status-card.deploying {
+  border-left-color: #fa8c16;
+  background: linear-gradient(135deg, #fff7e6 0%, #ffffff 100%);
+}
+
+/* Security Alert Cards */
+.security-alert-card {
+  border-radius: 8px;
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+}
+
+.security-alert-card.critical {
+  border-left: 4px solid #f5222d;
+  background: linear-gradient(135deg, #fff2f0 0%, #ffffff 100%);
+  box-shadow: 0 2px 8px rgba(245, 34, 45, 0.1);
+}
+
+.security-alert-card.high {
+  border-left: 4px solid #fa541c;
+  background: linear-gradient(135deg, #fff2e8 0%, #ffffff 100%);
+  box-shadow: 0 2px 8px rgba(250, 84, 28, 0.1);
+}
+
+.security-alert-card.medium {
+  border-left: 4px solid #fa8c16;
+  background: linear-gradient(135deg, #fff7e6 0%, #ffffff 100%);
+  box-shadow: 0 2px 8px rgba(250, 140, 22, 0.1);
+}
+
+.security-alert-card.low {
+  border-left: 4px solid #52c41a;
+  background: linear-gradient(135deg, #f6ffed 0%, #ffffff 100%);
+  box-shadow: 0 2px 8px rgba(82, 196, 26, 0.1);
+}
+
+.security-alert-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Performance Metrics */
+.performance-metric {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.performance-metric.met {
+  background: linear-gradient(135deg, #f6ffed 0%, #ffffff 100%);
+  border: 1px solid #b7eb8f;
+}
+
+.performance-metric.at-risk {
+  background: linear-gradient(135deg, #fff7e6 0%, #ffffff 100%);
+  border: 1px solid #ffd591;
+}
+
+.performance-metric.breached {
+  background: linear-gradient(135deg, #fff2f0 0%, #ffffff 100%);
+  border: 1px solid #ffb3ba;
+}
+
+.performance-metric:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Backup Status Cards */
+.backup-card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+.backup-card.success {
+  background: linear-gradient(135deg, #f6ffed 0%, #ffffff 100%);
+  border: 2px solid #b7eb8f;
+}
+
+.backup-card.failed {
+  background: linear-gradient(135deg, #fff2f0 0%, #ffffff 100%);
+  border: 2px solid #ffb3ba;
+}
+
+.backup-card.running {
+  background: linear-gradient(135deg, #f0f5ff 0%, #ffffff 100%);
+  border: 2px solid #85c1e9;
+  animation: pulse-blue 2s infinite;
+}
+
+.backup-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Security Scan Results */
+.scan-result-card {
+  background: #fafafa;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+}
+
+.scan-result-card:hover {
+  background: #f0f2f5;
+  transform: translateY(-1px);
+}
+
+.scan-result-card.completed {
+  border-left: 3px solid #52c41a;
+}
+
+.scan-result-card.scanning {
+  border-left: 3px solid #1890ff;
+}
+
+.scan-result-card.failed {
+  border-left: 3px solid #f5222d;
+}
+
+/* Health Status Indicators */
+.health-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.health-indicator.excellent {
+  background: #52c41a;
+  box-shadow: 0 0 0 2px rgba(82, 196, 26, 0.2);
+}
+
+.health-indicator.good {
+  background: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.health-indicator.warning {
+  background: #fa8c16;
+  box-shadow: 0 0 0 2px rgba(250, 140, 22, 0.2);
+}
+
+.health-indicator.critical {
+  background: #f5222d;
+  box-shadow: 0 0 0 2px rgba(245, 34, 45, 0.2);
+  animation: pulse-red 1.5s infinite;
+}
+
+/* Summary Cards Enhancement */
+.summary-card {
+  text-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  border-color: transparent;
+}
+
+.summary-card.excellent {
+  border-color: #52c41a;
+}
+
+.summary-card.warning {
+  border-color: #fa8c16;
+}
+
+.summary-card.critical {
+  border-color: #f5222d;
+}
+
+/* Animation Enhancements */
+@keyframes pulse-blue {
+  0% {
+    box-shadow: 0 0 0 0 rgba(24, 144, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(24, 144, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(24, 144, 255, 0);
+  }
+}
+
+@keyframes pulse-red {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 34, 45, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(245, 34, 45, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 34, 45, 0);
+  }
+}
+
+/* Quick Actions in Integrated View */
+.integrated-quick-actions .ant-btn {
+  border-radius: 8px;
+  font-weight: 500;
+  height: 32px;
+  transition: all 0.3s ease;
+}
+
+.integrated-quick-actions .ant-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.integrated-quick-actions .ant-btn-primary {
+  background: linear-gradient(135deg, #722ed1 0%, #9254de 100%);
+  border: none;
+}
+
+.integrated-quick-actions .ant-btn-primary:hover {
+  background: linear-gradient(135deg, #9254de 0%, #722ed1 100%);
+}
+
+/* Responsive Improvements for Integrated View */
+@media (max-width: 768px) {
+  .integrated-overview .ant-card {
+    margin-bottom: 16px;
+  }
+
+  .build-status-card,
+  .security-alert-card,
+  .backup-card {
+    margin-bottom: 12px;
+  }
+
+  .performance-metric {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .integrated-overview .ant-col {
+    margin-bottom: 12px;
+  }
+
+  .summary-card {
+    padding: 16px 12px;
+  }
+
+  .scan-result-card {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+}
+
+/* Workflow Dashboard Specific Styles */
+.workflow-dashboard {
+  min-height: calc(100vh - 200px);
+}
+
+/* Workflow Dashboard Header */
+.workflow-dashboard h2 {
+  font-weight: 700;
+  background: linear-gradient(135deg, #1890ff 0%, #722ed1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+/* Critical Alert Banner */
+.workflow-dashboard .ant-card {
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.workflow-critical-banner {
+  border: 2px solid #ff4d4f !important;
+  background: linear-gradient(135deg, #fff2f0 0%, #ffffff 100%) !important;
+  box-shadow: 0 4px 20px rgba(255, 77, 79, 0.15) !important;
+  animation: pulse-critical 3s infinite;
+}
+
+@keyframes pulse-critical {
+  0%,
+  100% {
+    box-shadow: 0 4px 20px rgba(255, 77, 79, 0.15);
+  }
+  50% {
+    box-shadow: 0 6px 25px rgba(255, 77, 79, 0.25);
+  }
+}
+
+/* System Health Cards */
+.workflow-health-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  border: 1px solid #e6f0ff;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.workflow-health-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #52c41a 0%, #1890ff 50%, #722ed1 100%);
+}
+
+.workflow-health-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  border-color: #1890ff;
+}
+
+/* Health Categories */
+.health-category {
+  text-align: center;
+  padding: 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+  border: 1px solid #e8e8e8;
+}
+
+.health-category:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border-color: #1890ff;
+}
+
+.health-category-deployment {
+  border-left: 4px solid #1890ff;
+}
+
+.health-category-security {
+  border-left: 4px solid #fa8c16;
+}
+
+.health-category-performance {
+  border-left: 4px solid #52c41a;
+}
+
+.health-category-infrastructure {
+  border-left: 4px solid #722ed1;
+}
+
+/* Task Cards */
+.workflow-task-card {
+  border-radius: 10px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.workflow-task-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  transition: all 0.3s ease;
+}
+
+.workflow-task-card.urgent::before {
+  background: linear-gradient(180deg, #ff4d4f 0%, #ff7875 100%);
+}
+
+.workflow-task-card.high::before {
+  background: linear-gradient(180deg, #fa8c16 0%, #ffa940 100%);
+}
+
+.workflow-task-card.medium::before {
+  background: linear-gradient(180deg, #1890ff 0%, #40a9ff 100%);
+}
+
+.workflow-task-card.low::before {
+  background: linear-gradient(180deg, #52c41a 0%, #73d13d 100%);
+}
+
+.workflow-task-card:hover {
+  transform: translateX(8px) translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.workflow-task-card.urgent:hover {
+  background: linear-gradient(135deg, #fff2f0 0%, #ffffff 100%);
+  border-color: #ff4d4f;
+}
+
+.workflow-task-card.action-required {
+  background: linear-gradient(135deg, #fff2f0 0%, #ffffff 100%);
+  border: 1px solid #ffb3ba;
+  box-shadow: 0 2px 8px rgba(255, 77, 79, 0.1);
+}
+
+.workflow-task-card.action-required:hover {
+  box-shadow: 0 8px 25px rgba(255, 77, 79, 0.15);
+}
+
+/* Priority Sections */
+.priority-section {
+  margin-bottom: 24px;
+}
+
+.priority-section h5 {
+  font-weight: 600;
+  margin-bottom: 16px;
+  padding-left: 12px;
+  border-left: 4px solid;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.priority-urgent h5 {
+  border-left-color: #ff4d4f;
+  color: #ff4d4f;
+}
+
+.priority-important h5 {
+  border-left-color: #1890ff;
+  color: #1890ff;
+}
+
+/* Today's Stats */
+.stats-card {
+  background: linear-gradient(135deg, #f0f5ff 0%, #ffffff 100%);
+  border: 1px solid #d6e4ff;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1890ff 0%, #40a9ff 100%);
+}
+
+.stats-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(24, 144, 255, 0.15);
+  border-color: #1890ff;
+}
+
+.stats-card .ant-statistic-value {
+  font-weight: 700;
+  font-size: 24px !important;
+}
+
+/* Weekly Goals */
+.goals-card {
+  background: linear-gradient(135deg, #f6ffed 0%, #ffffff 100%);
+  border: 1px solid #b7eb8f;
+  border-radius: 12px;
+}
+
+.goal-item {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  border-left: 3px solid #52c41a;
+  transition: all 0.3s ease;
+}
+
+.goal-item:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(82, 196, 26, 0.1);
+}
+
+/* Recommendations */
+.recommendation-item {
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #fff7e6 0%, #ffffff 100%);
+  border: 1px solid #ffd591;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.recommendation-item:hover {
+  background: linear-gradient(135deg, #fff2e8 0%, #ffffff 100%);
+  transform: translateX(8px);
+  box-shadow: 0 4px 12px rgba(250, 140, 22, 0.15);
+  border-color: #fa8c16;
+}
+
+.recommendation-item .ant-avatar {
+  background: linear-gradient(135deg, #fa8c16 0%, #ffa940 100%);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(250, 140, 22, 0.3);
+}
+
+/* View Mode Switch */
+.view-mode-switch {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #e8e8e8;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.view-mode-switch .ant-switch {
+  margin: 0 8px;
+}
+
+.view-mode-switch .ant-tag {
+  margin: 0 4px;
+  border-radius: 12px;
+  font-size: 11px;
+  transition: all 0.3s ease;
+}
+
+.view-mode-switch .ant-tag[data-active='true'] {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.3);
+}
+
+/* Progress Enhancements for Workflow */
+.workflow-progress {
+  margin-bottom: 8px;
+}
+
+.workflow-progress .ant-progress-line {
+  margin-bottom: 0;
+}
+
+.workflow-progress.deployment .ant-progress-bg {
+  background: linear-gradient(90deg, #1890ff 0%, #40a9ff 100%);
+}
+
+.workflow-progress.security .ant-progress-bg {
+  background: linear-gradient(90deg, #fa8c16 0%, #ffa940 100%);
+}
+
+.workflow-progress.uptime .ant-progress-bg {
+  background: linear-gradient(90deg, #52c41a 0%, #73d13d 100%);
+}
+
+/* Task Meta Information */
+.task-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: #666;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.task-meta .ant-tag {
+  font-size: 10px;
+  padding: 1px 6px;
+  margin: 0;
+}
+
+.task-assignee {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #666;
+  font-size: 10px;
+}
+
+/* Responsive Enhancements for Workflow */
+@media (max-width: 1200px) {
+  .workflow-task-card:hover {
+    transform: translateX(4px) translateY(-1px);
+  }
+
+  .stats-card .ant-statistic-value {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .workflow-dashboard h2 {
+    font-size: 20px;
+  }
+
+  .health-category {
+    padding: 12px;
+    margin-bottom: 8px;
+  }
+
+  .workflow-task-card {
+    margin-bottom: 8px;
+  }
+
+  .workflow-task-card:hover {
+    transform: translateY(-1px);
+  }
+
+  .stats-card .ant-statistic-value {
+    font-size: 18px !important;
+  }
+
+  .goal-item {
+    padding: 8px;
+    margin-bottom: 12px;
+  }
+
+  .recommendation-item {
+    padding: 12px;
+    margin-bottom: 8px;
+  }
+
+  .view-mode-switch {
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .workflow-task-card .ant-card-body {
+    padding: 12px;
+  }
+
+  .health-category {
+    padding: 8px;
+  }
+
+  .stats-card .ant-statistic-value {
+    font-size: 16px !important;
+  }
+
+  .priority-section h5 {
+    font-size: 14px;
+    padding-left: 8px;
+  }
+
+  .task-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .view-mode-switch {
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .view-mode-switch .ant-switch {
+    margin: 0;
+  }
+}
+
+/* Pipeline Flow Visualization Styles */
+@keyframes pipeline-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px rgba(24, 144, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(24, 144, 255, 0.1);
+  }
+}
+
+@keyframes pipeline-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.pipeline-flow-container {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(24, 144, 255, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: pipeline-flow 3s ease-in-out infinite;
+}
+
+.pipeline-stage-node {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+}
+
+.pipeline-stage-node:hover {
+  transform: scale(1.1);
+  z-index: 3;
+}
+
+.pipeline-stage-node.running {
+  animation: pipeline-pulse 2s infinite;
+}
+
+.pipeline-flow-arrow {
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.pipeline-flow-arrow.active {
+  background: linear-gradient(90deg, #52c41a 0%, #1890ff 100%);
+  animation: pipeline-flow 2s ease-in-out infinite;
+}
+
+.pipeline-flow-arrow.running {
+  background: linear-gradient(90deg, #1890ff 0%, #40a9ff 100%);
+  animation: pipeline-flow 1.5s ease-in-out infinite;
+}
+
+/* Enhanced Project Card Styles */
+.project-list-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-list-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(24, 144, 255, 0.05) 50%,
+    transparent 100%
+  );
+  transition: left 0.5s ease;
+  z-index: 0;
+}
+
+.project-list-item:hover::before {
+  left: 100%;
+}
+
+.project-list-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.project-list-item.selected {
+  border-color: #1890ff !important;
+  background: linear-gradient(135deg, #f0f5ff 0%, #ffffff 100%) !important;
+  box-shadow: 0 4px 15px rgba(24, 144, 255, 0.15);
+}
+
+/* Pipeline Status Indicators */
+.pipeline-status-excellent {
+  background: linear-gradient(135deg, #f6ffed 0%, #ffffff 100%);
+  border-left: 4px solid #52c41a;
+}
+
+.pipeline-status-good {
+  background: linear-gradient(135deg, #f0f5ff 0%, #ffffff 100%);
+  border-left: 4px solid #1890ff;
+}
+
+.pipeline-status-warning {
+  background: linear-gradient(135deg, #fff7e6 0%, #ffffff 100%);
+  border-left: 4px solid #fa8c16;
+}
+
+.pipeline-status-error {
+  background: linear-gradient(135deg, #fff2f0 0%, #ffffff 100%);
+  border-left: 4px solid #f5222d;
+}
+
+/* Tech Stack Tags Enhancement */
+.tech-stack-tag {
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+  border: 1px solid #e8e8e8;
+  transition: all 0.2s ease;
+}
+
+.tech-stack-tag:hover {
+  background: linear-gradient(135deg, #e6f7ff 0%, #ffffff 100%);
+  border-color: #91d5ff;
+  transform: translateY(-1px);
+}
+
+/* Health Score Enhancement */
+.health-score-indicator {
+  position: relative;
+  display: inline-block;
+}
+
+.health-score-indicator::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at center,
+    transparent 60%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  pointer-events: none;
+}
+
+/* Ensuring consistent light theme for better readability */
+.dashboard-container {
+  background: #f0f2f5;
+  color: #262626;
+}
+
+.dashboard-header {
+  background: linear-gradient(135deg, #f0f2ff 0%, #ffffff 100%);
+  border: 1px solid #e6f0ff;
+  color: #262626;
+}
+
+.dashboard-header h2 {
+  color: #001529;
+}
+
+/* Integrated Overview Specific Styling for Enhanced Readability */
+.integrated-overview {
+  color: #262626;
+}
+
+.integrated-overview .ant-card {
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  color: #262626;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.integrated-overview .ant-card .ant-card-body {
+  background: #ffffff;
+  color: #262626;
+}
+
+.integrated-overview .ant-typography {
+  color: #262626 !important;
+}
+
+.integrated-overview .ant-typography.ant-typography-secondary {
+  color: #8c8c8c !important;
+}
+
+.build-status-card,
+.security-alert-card,
+.backup-card,
+.scan-result-card {
+  background: #ffffff !important;
+  border: 1px solid #e8e8e8;
+  color: #262626 !important;
+}
+
+.workflow-health-card,
+.stats-card,
+.goals-card,
+.workflow-task-card {
+  background: #ffffff;
+  border-color: #e8e8e8;
+  color: #262626;
+}
+
+.health-category {
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+  border: 1px solid #e8e8e8;
+  color: #262626;
+}
+
+.recommendation-item {
+  background: linear-gradient(135deg, #fff7e6 0%, #ffffff 100%);
+  border: 1px solid #ffd591;
+  color: #262626;
+}
+
+.goal-item {
+  background: rgba(255, 255, 255, 0.95);
+  border-left-color: #52c41a;
+  color: #262626;
+}
+
+.view-mode-switch {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid #e8e8e8;
+  color: #262626;
+}
+
+/* Enhanced text readability for specific elements */
+.integrated-overview .ant-statistic {
+  color: #262626 !important;
+}
+
+.integrated-overview .ant-statistic-title {
+  color: #595959 !important;
+}
+
+.integrated-overview .ant-statistic-content {
+  color: #262626 !important;
+}
+
+.integrated-overview .ant-badge-status-text {
+  color: #262626 !important;
+}
+
+.integrated-overview .ant-tag {
+  color: inherit;
+}
+
+.integrated-overview .ant-progress-text {
+  color: #262626 !important;
+}
+
+/* Force light backgrounds for scan results and security alerts */
+.integrated-overview .scan-result-card {
+  background: #fafafa !important;
+  color: #262626 !important;
+}
+
+.integrated-overview .scan-result-card .ant-typography {
+  color: #262626 !important;
+}
+
+/* Ensure all card titles and content are readable */
+.integrated-overview .ant-card-head-title {
+  color: #262626 !important;
+}
+
+.integrated-overview .ant-card-body {
+  background: #ffffff !important;
+}
+
+/* Fix modal content readability */
+.integrated-overview .ant-modal {
+  color: #262626;
+}
+
+.integrated-overview .ant-modal-content {
+  background: #ffffff;
+  color: #262626;
+}
+
+/* Pipeline Stage Card Styling */
+.pipeline-stage-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.pipeline-stage-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: inherit !important;
+}
+
+.pipeline-stage-card:active {
+  transform: translateY(0px) !important;
+}
+
+/* Pipeline Grid Layout */
+.pipeline-stage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .pipeline-stage-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+}
+
+@media (max-width: 576px) {
+  .pipeline-stage-grid {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+/* Pipeline Stage Card Enhancement for Elapsed Time */
+.pipeline-stage-card {
+  min-height: 75px !important;
+}
+
+@media (max-width: 768px) {
+  .pipeline-stage-card {
+    min-height: 70px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .pipeline-stage-card {
+    min-height: 65px !important;
+  }
+}
+
+/* Pipeline Status Animations */
+@keyframes pipeline-running {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(24, 144, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(24, 144, 255, 0);
+  }
+}
+
+.pipeline-stage-card[data-status='running'] {
+  animation: pipeline-running 2s infinite;
+}
+
+@keyframes pipeline-error {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 34, 45, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(245, 34, 45, 0);
+  }
+}
+
+.pipeline-stage-card[data-status='error'] {
+  animation: pipeline-error 1.5s infinite;
+}
+
+/* Enhanced Project List Styles */
+.enhanced-project-list-container {
+  color: #262626;
+}
+
+.enhanced-project-list-container .ant-list-item {
+  border: none;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.enhanced-project-list-container .ant-list-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.enhanced-project-list-container .ant-list-item.selected {
+  border-color: #1890ff !important;
+  background: linear-gradient(135deg, #f0f5ff 0%, #ffffff 100%) !important;
+  box-shadow: 0 8px 25px rgba(24, 144, 255, 0.2);
+}
+
+/* Project Header Styling */
+.enhanced-project-list-container .ant-list-item .project-header {
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.enhanced-project-list-container .ant-list-item:hover .project-header {
+  background: linear-gradient(135deg, #f0f5ff 0%, #ffffff 100%);
+}
+
+.enhanced-project-list-container .ant-list-item.selected .project-header {
+  background: linear-gradient(135deg, #e6f7ff 0%, #ffffff 100%);
+}
+
+/* Four Areas Grid Styling */
+.enhanced-project-list-container .project-areas-grid {
+  padding: 16px 20px;
+  background: #ffffff;
+}
+
+.enhanced-project-list-container .project-area-card {
+  height: 100%;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.enhanced-project-list-container .project-area-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.3s ease;
+}
+
+.enhanced-project-list-container .project-area-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Area-specific color coding */
+.enhanced-project-list-container .project-basic-info::before {
+  background: linear-gradient(90deg, #1890ff 0%, #40a9ff 100%);
+}
+
+.enhanced-project-list-container .pipeline-flow::before {
+  background: linear-gradient(90deg, #52c41a 0%, #73d13d 100%);
+}
+
+.enhanced-project-list-container .security-vulnerabilities::before {
+  background: linear-gradient(90deg, #fa8c16 0%, #ffa940 100%);
+}
+
+.enhanced-project-list-container .health-status::before {
+  background: linear-gradient(90deg, #f5222d 0%, #ff4d4f 100%);
+}
+
+/* Area Content Styling */
+.enhanced-project-list-container .ant-card-small > .ant-card-head {
+  min-height: 40px;
+  padding: 0 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.enhanced-project-list-container
+  .ant-card-small
+  > .ant-card-head
+  .ant-card-head-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.enhanced-project-list-container .ant-card-small > .ant-card-body {
+  padding: 12px;
+}
+
+/* Pipeline Steps Styling */
+.enhanced-project-list-container .ant-steps-small .ant-steps-item {
+  margin-right: 12px;
+}
+
+.enhanced-project-list-container .ant-steps-small .ant-steps-item-title {
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.enhanced-project-list-container .ant-steps-small .ant-steps-item-icon {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+}
+
+/* Security Status Badges */
+.enhanced-project-list-container .security-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 500;
+  text-align: center;
+  min-width: 40px;
+}
+
+.enhanced-project-list-container .security-badge.critical {
+  background: linear-gradient(135deg, #fff2f0 0%, #ffccc7 100%);
+  color: #f5222d;
+  border: 1px solid #ffccc7;
+}
+
+.enhanced-project-list-container .security-badge.high {
+  background: linear-gradient(135deg, #fff2e8 0%, #ffd8bf 100%);
+  color: #fa541c;
+  border: 1px solid #ffd8bf;
+}
+
+.enhanced-project-list-container .security-badge.safe {
+  background: linear-gradient(135deg, #f6ffed 0%, #d9f7be 100%);
+  color: #52c41a;
+  border: 1px solid #d9f7be;
+}
+
+/* Health Status Dashboard */
+.enhanced-project-list-container .health-dashboard {
+  text-align: center;
+}
+
+.enhanced-project-list-container .health-dashboard .ant-progress-circle {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.enhanced-project-list-container .health-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.enhanced-project-list-container .health-metric {
+  text-align: center;
+  padding: 4px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.enhanced-project-list-container .health-metric-title {
+  font-size: 10px;
+  color: #8c8c8c;
+  margin-bottom: 2px;
+}
+
+.enhanced-project-list-container .health-metric-value {
+  font-size: 12px;
+  font-weight: 600;
+  color: #262626;
+}
+
+/* Status Indicators */
+.enhanced-project-list-container .status-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.enhanced-project-list-container .status-indicators .ant-badge {
+  font-size: 8px;
+}
+
+/* Responsive Enhancements for Enhanced Project List */
+@media (max-width: 1200px) {
+  .enhanced-project-list-container .project-areas-grid .ant-col {
+    margin-bottom: 12px;
+  }
+
+  .enhanced-project-list-container .ant-card-small > .ant-card-body {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .enhanced-project-list-container .ant-list-item {
+    margin-bottom: 16px;
+  }
+
+  .enhanced-project-list-container .project-areas-grid {
+    padding: 12px 16px;
+  }
+
+  .enhanced-project-list-container .ant-steps-small {
+    display: none; /* Hide detailed steps on mobile, show summary instead */
+  }
+
+  .enhanced-project-list-container .health-metrics {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .enhanced-project-list-container .project-area-card {
+    min-height: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .enhanced-project-list-container .project-areas-grid .ant-col {
+    margin-bottom: 8px;
+  }
+
+  .enhanced-project-list-container .ant-card-small > .ant-card-head {
+    min-height: 36px;
+    padding: 0 8px;
+  }
+
+  .enhanced-project-list-container .ant-card-small > .ant-card-body {
+    padding: 8px;
+  }
+
+  .enhanced-project-list-container .health-dashboard .ant-progress-circle {
+    width: 60px !important;
+    height: 60px !important;
+  }
+}
+
+/* Animation for loading states */
+@keyframes pulse-security {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(250, 140, 22, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(250, 140, 22, 0);
+  }
+}
+
+.enhanced-project-list-container .security-scanning {
+  animation: pulse-security 2s infinite;
+}
+
+@keyframes pulse-pipeline {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(82, 196, 26, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(82, 196, 26, 0);
+  }
+}
+
+.enhanced-project-list-container .pipeline-running {
+  animation: pulse-pipeline 2s infinite;
+}
+
+/* Compliance Status Indicators */
+.enhanced-project-list-container .compliance-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.enhanced-project-list-container .compliance-indicators .ant-tag {
+  margin: 0;
+  padding: 1px 4px;
+  font-size: 9px;
+  line-height: 1.2;
+  border-radius: 6px;
+}
+
+/* Tech Stack Display */
+.enhanced-project-list-container .tech-stack-display {
+  margin-top: 8px;
+}
+
+.enhanced-project-list-container .tech-stack-display .ant-tag {
+  margin: 2px 1px;
+  padding: 1px 4px;
+  font-size: 9px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+  border: 1px solid #e8e8e8;
+  transition: all 0.2s ease;
+}
+
+.enhanced-project-list-container .tech-stack-display .ant-tag:hover {
+  background: linear-gradient(135deg, #e6f7ff 0%, #ffffff 100%);
+  border-color: #91d5ff;
+  transform: translateY(-1px);
+}
+
+/* Environment and Team Info */
+.enhanced-project-list-container .project-meta-info {
+  margin: 8px 0;
+}
+
+.enhanced-project-list-container .project-meta-info .ant-row {
+  margin-bottom: 4px;
+}
+
+.enhanced-project-list-container .project-meta-info .ant-col {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #595959;
+  font-size: 11px;
+}
+
+/* Enhanced Statistic Display */
+.enhanced-project-list-container .ant-statistic {
+  text-align: center;
+}
+
+.enhanced-project-list-container .ant-statistic-title {
+  font-size: 10px;
+  color: #8c8c8c;
+  margin-bottom: 2px;
+}
+
+.enhanced-project-list-container .ant-statistic-content {
+  font-size: 13px !important;
+  font-weight: 600;
+  color: #262626;
+}
+
+/* Ensure consistent light theme */
+.enhanced-project-list-container {
+  background: #f0f2f5;
+  color: #262626;
+}
+
+.enhanced-project-list-container .ant-card {
+  background: #ffffff;
+  color: #262626;
+  border: 1px solid #e8e8e8;
+}
+
+.enhanced-project-list-container .ant-typography {
+  color: #262626 !important;
+}
+
+.enhanced-project-list-container .ant-typography.ant-typography-secondary {
+  color: #8c8c8c !important;
+}
+
+/* New component-specific styles for dashboard refactoring */
+
+/* SecurityOverviewTab specific styles */
+.project-description {
+  font-size: 12px;
+}
+
+.security-tags {
+  margin-top: 4px;
+}
+
+.security-progress {
+  margin-left: 16px;
+}
+
+/* OverallStatusTab specific styles */
+.activity-time {
+  font-size: 11px;
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.activity-assignee {
+  font-size: 11px;
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.availability-score {
+  color: #52c41a;
+}
+
+.alerts-title {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* PipelineQuickActionsTab specific styles */
+.no-project-selected {
+  text-align: center;
+  padding: 48px 0;
+}
+
+.select-project-button {
+  margin-top: 16px;
+}
+
+/* Remove inline styles - moved to CSS classes */
+.dashboard-tab-content {
+  padding: 24px;
+}
+
+.dashboard-timeline {
+  margin-bottom: 16px;
+}
+
+.dashboard-metrics {
+  width: 100%;
+}
+
+.dashboard-summary-card {
+  margin-bottom: 16px;
+}
+
+/* Performance optimizations */
+.dashboard-container .ant-card {
+  will-change: transform, box-shadow;
+}
+
+.dashboard-container .ant-card:hover {
+  will-change: auto;
+}
+
+/* Accessibility improvements */
+.dashboard-container .ant-card:focus-visible {
+  outline: 2px solid #1890ff;
+  outline-offset: 2px;
+}
+
+.dashboard-container .ant-btn:focus-visible {
+  outline: 2px solid #1890ff;
+  outline-offset: 2px;
+}
+
+/* Mobile optimizations */
+@media (max-width: 576px) {
+  .security-progress {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
+  .activity-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .metric-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

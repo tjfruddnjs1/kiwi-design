@@ -1,0 +1,23 @@
+.project-manage-container {
+  padding: 24px;
+  background: #fff;
+}
+
+.project-login-form {
+  margin-bottom: 24px;
+}
+
+.project-list-container {
+  margin-top: 20px;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 200px); /* 전체 높이에서 헤더/패딩 등을 뺀 값으로 조정 */
+  text-align: center;
+}
+.empty-state {
+  flex-direction: column;
+}

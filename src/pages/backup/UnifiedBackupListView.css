@@ -1,0 +1,47 @@
+/* UnifiedBackupListView.css - 통합 백업 목록 스타일 */
+
+/* 런타임 탭 라벨 스타일 */
+.runtime-tab-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.runtime-tab-text {
+  display: inline;
+}
+
+/* 반응형: 화면 너비 768px 이하에서 텍스트 숨김 */
+@media (max-width: 768px) {
+  .runtime-tab-text {
+    display: none;
+  }
+
+  .runtime-tab-label {
+    gap: 4px;
+  }
+}
+
+/* 반응형: 화면 너비 576px 이하에서 Badge 크기 조정 */
+@media (max-width: 576px) {
+  .runtime-tab-label .ant-badge {
+    margin-left: 2px !important;
+  }
+
+  .runtime-tab-label .ant-badge-count {
+    font-size: 10px;
+    min-width: 16px;
+    height: 16px;
+    line-height: 16px;
+    padding: 0 4px;
+  }
+}
+
+/* Segmented 컴포넌트 반응형 */
+.unified-backup-list .ant-segmented {
+  flex-wrap: wrap;
+}
+
+.unified-backup-list .ant-segmented-item {
+  min-width: auto;
+}

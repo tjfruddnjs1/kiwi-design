@@ -1,0 +1,910 @@
+/* ============================================================================
+   Backup Management Page Styles
+   ============================================================================ */
+
+/* Import common management styles */
+@import '../../styles/common-management.css';
+
+/* Page Container */
+.backup-manage.management-page {
+  padding: 24px;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* Page Header */
+.backup-manage .page-header {
+  background: #fff;
+  padding: 20px 24px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.backup-manage .page-header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.backup-manage .page-header-title h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.backup-manage .page-header-description {
+  color: #6b7280;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.backup-manage .page-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Statistics Cards */
+.backup-manage .stats-row {
+  margin-bottom: 20px;
+}
+
+.backup-manage .stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  height: 100%;
+}
+
+.backup-manage .stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.backup-manage .stat-card .ant-statistic-title {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.backup-manage .stat-card .ant-statistic-content {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.backup-manage .stat-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.backup-manage .stat-card-icon.blue {
+  background: #e6f7ff;
+  color: #1890ff;
+}
+
+.backup-manage .stat-card-icon.green {
+  background: #f6ffed;
+  color: #52c41a;
+}
+
+.backup-manage .stat-card-icon.orange {
+  background: #fff7e6;
+  color: #fa8c16;
+}
+
+/* Main Card */
+.backup-manage .main-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.backup-manage .main-card .ant-card-body {
+  padding: 0;
+}
+
+/* Card Title */
+.backup-manage .card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+/* Cards general */
+.backup-manage .ant-card {
+  margin-bottom: 0;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.backup-manage .ant-tabs {
+  margin-top: 0;
+}
+
+.backup-manage .ant-table {
+  margin-top: 0;
+}
+
+/* Modal Styles */
+.backup-modal {
+  max-width: 800px;
+}
+
+.backup-modal .modal-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+}
+
+.backup-modal .modal-title-icon {
+  font-size: 24px;
+  color: #1890ff;
+}
+
+.backup-modal .backup-steps {
+  margin: 0 0 32px;
+  padding: 0 24px;
+}
+
+.backup-modal .ant-steps-item-icon {
+  background: #fff;
+  border-color: #1890ff;
+}
+
+.backup-modal .ant-steps-item-active .ant-steps-item-icon {
+  background: #1890ff;
+}
+
+.backup-modal .step-content {
+  padding: 0 24px;
+}
+
+.backup-modal .step-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.backup-modal .step-icon {
+  font-size: 32px;
+  color: #1890ff;
+  margin-top: 4px;
+}
+
+.backup-modal .step-info h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #000000d9;
+}
+
+.backup-modal .step-info p {
+  margin: 0;
+  color: #00000073;
+}
+
+.backup-modal .server-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0;
+}
+
+.backup-modal .server-option .anticon {
+  font-size: 20px;
+  color: #1890ff;
+}
+
+.backup-modal .server-name {
+  font-weight: 500;
+  color: #000000d9;
+}
+
+.backup-modal .server-ip {
+  font-size: 12px;
+  color: #00000073;
+}
+
+.backup-modal .step-description {
+  margin-top: 24px;
+  padding: 16px;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.backup-modal .step-description h4 {
+  margin: 0 0 12px;
+  color: #000000d9;
+}
+
+.backup-modal .step-description ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #00000073;
+}
+
+.backup-modal .step-description li {
+  margin-bottom: 8px;
+}
+
+.backup-modal .step-description li:last-child {
+  margin-bottom: 0;
+}
+
+.backup-modal .step-description code {
+  background: #fff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #1890ff;
+}
+
+.backup-modal .schedule-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.backup-modal .ant-form-item {
+  margin-bottom: 24px;
+}
+
+/* Select Styles */
+.backup-modal .ant-select {
+  width: 100%;
+}
+
+.backup-modal .ant-select-selector {
+  height: 40px !important;
+  padding: 4px 12px !important;
+}
+
+.backup-modal .ant-select-selection-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  padding: 0 !important;
+}
+
+.backup-modal .server-option {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+.backup-modal .server-option .anticon {
+  flex-shrink: 0 !important;
+  font-size: 16px !important;
+  color: #1890ff !important;
+}
+
+.backup-modal .server-option > div {
+  flex: 1 !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.backup-modal .server-name {
+  font-weight: 500 !important;
+  color: #000000d9 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.backup-modal .server-ip {
+  font-size: 12px !important;
+  color: #00000073 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Dropdown styles */
+.backup-modal .ant-select-dropdown {
+  padding: 4px !important;
+}
+
+.backup-modal .ant-select-item {
+  padding: 8px 12px !important;
+}
+
+.backup-modal .ant-select-item-option-content {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.backup-modal
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: #e6f7ff !important;
+}
+
+.backup-modal .ant-select-selection-placeholder {
+  color: #00000040 !important;
+  line-height: 32px !important;
+}
+
+.backup-modal .ant-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.backup-modal .ant-btn {
+  min-width: 80px;
+  height: 40px;
+  padding: 6.4px 16px;
+  font-size: 16px;
+}
+
+/* Schedule Section Styles */
+.backup-modal .schedule-section {
+  margin-bottom: 24px;
+}
+
+.backup-modal .schedule-section .ant-form-item {
+  margin-bottom: 16px;
+}
+
+.backup-modal .schedule-section .ant-radio-group {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+}
+
+.backup-modal .schedule-section .ant-radio-button-wrapper {
+  flex: 1;
+  text-align: center;
+}
+
+.backup-modal .schedule-section .ant-picker {
+  width: 100%;
+}
+
+/* Server Selection Styles */
+.backup-modal .server-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.backup-modal .server-label .server-name {
+  font-weight: 500;
+  color: #000000d9;
+}
+
+.backup-status {
+  padding: 20px 0;
+}
+
+.status-card {
+  margin-bottom: 20px;
+}
+
+.status-content {
+  padding: 8px 0;
+}
+
+.status-item {
+  display: flex;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.status-item:last-child {
+  margin-bottom: 0;
+}
+
+.status-label {
+  width: 160px;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+}
+
+.status-value {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-value .endpoint {
+  color: #666;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+/* 상태 표시 개선 */
+.status-value {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.status-note {
+  color: #666;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.status-summary {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.status-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.status-item:last-child {
+  border-bottom: none;
+}
+
+.status-label {
+  font-weight: 500;
+  color: #262626;
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+.status-value {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.status-value .ant-tag {
+  margin: 0;
+}
+
+.status-value .endpoint {
+  color: #666;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.status-note {
+  color: #666;
+  font-size: 12px;
+  font-style: italic;
+  margin-left: 8px;
+}
+
+/* 백업 목록 헤더 스타일 */
+.backup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 16px;
+  background: #fafafa;
+  border-radius: 6px;
+}
+
+.backup-header .ant-select {
+  min-width: 200px;
+}
+
+/* 설치 상태 카드 스타일 */
+.status-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.status-card .ant-card-head {
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.status-card .ant-card-head-title {
+  font-weight: 600;
+  color: #212529;
+}
+
+.status-content {
+  padding: 16px 0;
+}
+
+.step-progress {
+  margin: 24px 0;
+  padding: 16px;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.progress-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.progress-item:last-child {
+  margin-bottom: 0;
+}
+
+.progress-label {
+  flex: 1;
+  margin-right: 12px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.progress-item .anticon {
+  font-size: 16px;
+}
+
+.backup-steps {
+  margin-bottom: 24px;
+}
+
+.backup-modal .ant-modal-body {
+  padding: 24px;
+}
+
+.modal-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-title-icon {
+  font-size: 20px;
+  color: #1890ff;
+}
+
+.final-step-content {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.config-summary {
+  margin-bottom: 24px;
+}
+
+.config-summary h3 {
+  margin-bottom: 16px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.summary-card {
+  margin-bottom: 12px;
+}
+
+.summary-card:last-child {
+  margin-bottom: 0;
+}
+
+.summary-card .ant-card-head {
+  min-height: 40px;
+  padding: 0 12px;
+}
+
+.summary-card .ant-card-head-title {
+  padding: 8px 0;
+}
+
+.summary-card .ant-card-body {
+  padding: 12px;
+}
+
+.summary-card p {
+  margin-bottom: 4px;
+}
+
+.summary-card p:last-child {
+  margin-bottom: 0;
+}
+
+.installation-status {
+  margin: 24px 0;
+  padding: 16px;
+  background: #fafafa;
+  border-radius: 4px;
+}
+
+.start-installation {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.help-text {
+  margin-top: 8px;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 12px;
+}
+
+.process-steps {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  margin-bottom: 30px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.step-item.active {
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+}
+
+.step-icon {
+  font-size: 24px;
+  color: #8c8c8c;
+}
+
+.step-item.active .step-icon {
+  color: #1890ff;
+}
+
+.step-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.step-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #262626;
+}
+
+.step-item.active .step-title {
+  color: #1890ff;
+}
+
+.step-description {
+  font-size: 14px;
+  color: #8c8c8c;
+}
+
+.step-item.active .step-description {
+  color: #1890ff;
+}
+
+/* 설치 진행 상황 모달 스타일 */
+.installation-progress-content {
+  padding: 16px 0;
+}
+
+.installation-progress-content .current-step {
+  margin-bottom: 24px;
+}
+
+.installation-progress-content .current-step h4 {
+  margin: 0 0 16px;
+  font-size: 16px;
+  color: #000000d9;
+}
+
+.installation-logs {
+  margin-top: 24px;
+}
+
+.installation-logs h4 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: #000000d9;
+}
+
+.log-container {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  background: #fafafa;
+  padding: 12px;
+}
+
+.log-entry {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #000000d9;
+  margin-bottom: 4px;
+  word-break: break-all;
+}
+
+.log-entry:last-child {
+  margin-bottom: 0;
+}
+
+.no-logs {
+  color: #00000073;
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+}
+
+/* 로그 타입별 색상 */
+.log-entry:contains('') {
+  color: #52c41a;
+}
+
+.log-entry:contains('') {
+  color: #ff4d4f;
+}
+
+.log-entry:contains('🔄') {
+  color: #faad14;
+}
+
+.log-entry:contains('📦') {
+  color: #1890ff;
+}
+
+.log-entry:contains('🔧') {
+  color: #722ed1;
+}
+
+.log-entry:contains('💾') {
+  color: #13c2c2;
+}
+
+.log-entry:contains('🎉') {
+  color: #eb2f96;
+}
+
+/* 백업 헤더 스타일 개선 */
+.backup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.backup-header > div:first-child {
+  flex: 1;
+}
+
+.backup-header > div:last-child {
+  flex-shrink: 0;
+}
+
+/* 카드 타이틀 스타일 */
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+/* 상단 인프라 선택 영역 스타일 */
+.ant-card-head-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ant-card-extra {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 빈 상태 스타일 개선 */
+.empty-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: #666;
+}
+
+.empty-status h3 {
+  margin: 0 0 8px 0;
+  color: #262626;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.empty-status p {
+  margin: 0;
+  color: #8c8c8c;
+  font-size: 14px;
+  text-align: center;
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+/* 상태 메시지 스타일 */
+.status-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.status-message .anticon {
+  font-size: 18px;
+  color: #1890ff;
+}
+
+/* 연결된 저장소 정보 스타일 */
+.connected-storage-info {
+  padding: 0px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.storage-label {
+  font-weight: 500;
+  color: #1890ff;
+  margin-right: 8px;
+}
+
+.storage-status {
+  margin-left: 8px;
+  color: #666;
+}
+
+/* 백업 목록 헤더 상태 표시 개선 */
+.backup-header .ant-space .ant-tag {
+  margin-right: 8px;
+}
+
+.backup-header .ant-space > span {
+  font-weight: 500;
+  color: #666;
+}
+
+/* 설정 상태 페이지 스타일 개선 */
+.status-summary .ant-alert {
+  border-radius: 8px;
+}
+
+.status-summary .ant-alert-description {
+  line-height: 1.5;
+}
+
+.status-summary .ant-alert-description > div:first-child {
+  margin-bottom: 4px;
+}
+
+.status-summary .ant-alert-description > div:last-child {
+  font-style: italic;
+  opacity: 0.8;
+}

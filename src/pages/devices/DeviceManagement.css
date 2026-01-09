@@ -1,0 +1,389 @@
+/* ============================================================================
+   Device Management Page Styles
+   ============================================================================ */
+
+/* Import common management styles */
+@import '../../styles/common-management.css';
+
+/* Page Container */
+.device-management.management-page {
+  padding: 24px;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* Page Header */
+.device-management .page-header {
+  background: #fff;
+  padding: 20px 24px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.device-management .page-header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.device-management .page-header-title h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.device-management .page-header-description {
+  color: #6b7280;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.device-management .page-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Statistics Cards */
+.device-management .stats-row {
+  margin-bottom: 20px;
+}
+
+.device-management .stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  height: 100%;
+}
+
+.device-management .stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.device-management .stat-card .ant-statistic-title {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.device-management .stat-card .ant-statistic-content {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.device-management .stat-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.device-management .stat-card-icon.blue {
+  background: #e6f7ff;
+  color: #1890ff;
+}
+
+.device-management .stat-card-icon.green {
+  background: #f6ffed;
+  color: #52c41a;
+}
+
+.device-management .stat-card-icon.orange {
+  background: #fff7e6;
+  color: #fa8c16;
+}
+
+/* Main Card */
+.device-management .main-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.device-management .main-card .ant-card-head {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 16px 24px;
+  background: #fff;
+}
+
+.device-management .main-card .ant-card-head-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.device-management .main-card .ant-card-body {
+  padding: 0;
+}
+
+/* Table Styles */
+.device-management .ant-table {
+  border-radius: 0;
+}
+
+.device-management .ant-table-thead > tr > th {
+  background: #fafbfc;
+  font-weight: 600;
+  font-size: 13px;
+  color: #374151;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.device-management .ant-table-tbody > tr > td {
+  padding: 14px 16px;
+  font-size: 13px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.device-management .ant-table-tbody > tr:hover > td {
+  background: #f9fafb;
+}
+
+.device-management .ant-table-tbody > tr:last-child > td {
+  border-bottom: none;
+}
+
+/* Expandable Row Icon */
+.device-management .ant-table-row-expand-icon {
+  color: #1890ff;
+}
+
+/* Tags */
+.device-management .ant-tag {
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 2px 8px;
+  font-weight: 500;
+}
+
+/* Buttons */
+.device-management .ant-btn {
+  border-radius: 6px;
+  font-weight: 500;
+  height: 36px;
+  padding: 0 16px;
+}
+
+.device-management .ant-btn-primary {
+  box-shadow: 0 2px 4px rgba(24, 144, 255, 0.3);
+}
+
+.device-management .ant-btn-sm {
+  height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.device-management .ant-btn-text {
+  color: #6b7280;
+  padding: 4px 8px;
+  height: auto;
+}
+
+.device-management .ant-btn-text:hover {
+  color: #1890ff;
+  background: #f0f7ff;
+}
+
+.device-management .ant-btn-text.ant-btn-dangerous:hover {
+  color: #ff4d4f;
+  background: #fff1f0;
+}
+
+/* Progress Bars */
+.device-management .ant-progress {
+  margin: 0;
+}
+
+.device-management .ant-progress-bg {
+  border-radius: 4px;
+}
+
+/* Modal Styles */
+.device-management .ant-modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.device-management .ant-modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.device-management .ant-modal-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.device-management .ant-modal-body {
+  padding: 24px;
+}
+
+.device-management .ant-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Form Styles */
+.device-management .ant-form-item-label > label {
+  font-weight: 500;
+  color: #374151;
+}
+
+.device-management .ant-input,
+.device-management .ant-input-number,
+.device-management .ant-select-selector,
+.device-management .ant-tree-select-selector {
+  border-radius: 6px !important;
+}
+
+.device-management .ant-input:focus,
+.device-management .ant-input-number:focus,
+.device-management .ant-select-focused .ant-select-selector {
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* Divider */
+.device-management .ant-divider {
+  margin: 16px 0;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* SSH Path Display */
+.device-management .ssh-path-display {
+  padding: 16px;
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+}
+
+.device-management .ssh-path-node {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #d9d9d9;
+  white-space: nowrap;
+}
+
+.device-management .ssh-path-arrow {
+  color: #52c41a;
+  font-size: 16px;
+  margin: 0 8px;
+}
+
+/* Detail Modal */
+.device-management .detail-section {
+  background: #fafbfc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.device-management .detail-section-title {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.device-management .runtime-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #d9d9d9;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.device-management .runtime-tag.active {
+  border-color: #52c41a;
+  background: #f6ffed;
+}
+
+.device-management .runtime-tag.inactive {
+  border-color: #d9d9d9;
+  background: #fafafa;
+  color: #8c8c8c;
+}
+
+/* Pagination */
+.device-management .ant-pagination {
+  margin: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.device-management .ant-pagination-item {
+  border-radius: 6px;
+}
+
+.device-management .ant-pagination-item-active {
+  border-color: #1890ff;
+  background: #1890ff;
+}
+
+.device-management .ant-pagination-item-active a {
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .device-management.management-page {
+    padding: 16px;
+  }
+
+  .device-management .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .device-management .page-header-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .device-management .stat-card {
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .device-management.management-page {
+    padding: 12px;
+  }
+
+  .device-management .ant-table-thead > tr > th,
+  .device-management .ant-table-tbody > tr > td {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+}

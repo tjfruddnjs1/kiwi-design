@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔐 Login API Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        button {
+            background: #1890ff;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-right: 1rem;
+        }
+        button:hover {
+            background: #40a9ff;
+        }
+        button:disabled {
+            background: #d9d9d9;
+            cursor: not-allowed;
+        }
+        .log {
+            background: #f6f6f6;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .status {
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        .status.success {
+            background: #f6ffed;
+            border: 1px solid #b7eb8f;
+            color: #52c41a;
+        }
+        .status.error {
+            background: #fff2f0;
+            border: 1px solid #ffccc7;
+            color: #ff4d4f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 KIWI Login API Test</h1>
+        <p>브라우저에서 직접 로그인 API를 테스트하여 CORS 및 인증 문제를 디버깅합니다.</p>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">이메일:</label>
+                <input type="email" id="email" name="email" value="line@gmail.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">비밀번호:</label>
+                <input type="password" id="password" name="password" value="12341234" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="submitBtn">🚀 로그인 테스트</button>
+                <button type="button" id="clearBtn">🗑️ 로그 지우기</button>
+                <button type="button" id="checkCorsBtn">🌐 CORS 테스트</button>
+            </div>
+        </form>
+
+        <div id="status"></div>
+
+        <h3>📋 디버깅 로그</h3>
+        <div id="log" class="log">테스트를 시작하려면 위의 로그인 버튼을 클릭하세요.\n</div>
+    </div>
+
+    <script>
+        const logElement = document.getElementById('log');
+        const statusElement = document.getElementById('status');
+        
+        function addLog(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const emoji = type === 'error' ? '❌' : type === 'success' ? '✅' : '📝';
+            logElement.textContent += `[${timestamp}] ${emoji} ${message}\n`;
+            logElement.scrollTop = logElement.scrollHeight;
+        }
+
+        function setStatus(message, type) {
+            statusElement.className = `status ${type}`;
+            statusElement.textContent = message;
+        }
+
+        function clearLog() {
+            logElement.textContent = '';
+            statusElement.textContent = '';
+        }
+
+        async function testLogin(email, password) {
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            
+            try {
+                addLog(`로그인 시도: ${email}`);
+                addLog(`브라우저 Origin: ${window.location.origin}`);
+                addLog(`요청 URL: http://localhost:8080/api/v1/auth/login`);
+                
+                const requestData = { email, password };
+                addLog(`요청 데이터: ${JSON.stringify(requestData)}`);
+
+                const response = await fetch('http://localhost:8080/api/v1/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Origin': window.location.origin
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify(requestData)
+                });
+
+                addLog(`응답 상태: ${response.status} ${response.statusText}`);
+                addLog(`응답 헤더: ${JSON.stringify(Object.fromEntries(response.headers.entries()))}`);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                addLog(`응답 데이터: ${JSON.stringify(data, null, 2)}`);
+
+                if (data.success && data.data?.token) {
+                    addLog('🎉 로그인 성공!', 'success');
+                    addLog(`토큰 길이: ${data.data.token.length}자`, 'success');
+                    
+                    // JWT 토큰 디코딩
+                    try {
+                        const tokenPayload = JSON.parse(atob(data.data.token.split('.')[1]));
+                        addLog(`토큰 내용: ${JSON.stringify(tokenPayload, null, 2)}`, 'success');
+                    } catch (e) {
+                        addLog('토큰 디코딩 실패', 'error');
+                    }
+                    
+                    setStatus('✅ 로그인 성공!', 'success');
+                } else {
+                    addLog('로그인 실패: 응답 형식이 올바르지 않습니다.', 'error');
+                    setStatus('❌ 로그인 실패', 'error');
+                }
+
+            } catch (error) {
+                addLog(`오류 발생: ${error.message}`, 'error');
+                setStatus(`❌ 오류: ${error.message}`, 'error');
+                
+                // CORS 에러인지 확인
+                if (error.message.includes('CORS') || error.message.includes('fetch')) {
+                    addLog('CORS 정책 위반 가능성이 높습니다. 서버의 CORS 설정을 확인하세요.', 'error');
+                }
+            } finally {
+                submitBtn.disabled = false;
+            }
+        }
+
+        async function testCors() {
+            addLog('CORS 테스트 시작...');
+            try {
+                const response = await fetch('http://localhost:8080/api/v1/auth/login', {
+                    method: 'OPTIONS'
+                });
+                addLog(`OPTIONS 응답: ${response.status}`);
+                addLog(`CORS 헤더: ${JSON.stringify(Object.fromEntries(response.headers.entries()))}`);
+            } catch (error) {
+                addLog(`CORS 테스트 실패: ${error.message}`, 'error');
+            }
+        }
+
+        // 이벤트 리스너
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            await testLogin(email, password);
+        });
+
+        document.getElementById('clearBtn').addEventListener('click', clearLog);
+        document.getElementById('checkCorsBtn').addEventListener('click', testCors);
+
+        // 페이지 로드 시 초기화
+        addLog('🚀 로그인 테스트 도구가 준비되었습니다.');
+        addLog(`현재 페이지: ${window.location.href}`);
+        addLog(`브라우저: ${navigator.userAgent}`);
+    </script>
+</body>
+</html>

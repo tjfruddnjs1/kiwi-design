@@ -1,0 +1,90 @@
+{
+  "name": "kiwi-design",
+  "version": "1.0.0",
+  "description": "K8S Control Design Preview - Mock Data Version for Design Team",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^5.6.1",
+    "@monaco-editor/react": "^4.7.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jspdf": "^1.3.3",
+    "antd": "^5.26.6",
+    "axios": "^1.10.0",
+    "dayjs": "^1.11.13",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.3",
+    "jwt-decode": "^4.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.1",
+    "web-vitals": "^2.1.4",
+    "zod": "^3.23.8",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.11",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.3.3",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "eslint-plugin-prettier": "^5.5.3",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "globals": "^15.6.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.4",
+    "prettier": "^3.6.2",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.6.0",
+    "vite": "^5.4.8"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:network": "vite --host 0.0.0.0",
+    "dev:safe": "npm run port:check && vite",
+    "dev:3001": "vite --port 3001",
+    "dev:3002": "vite --port 3002",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"No test runner configured\"",
+    "lint": "eslint src --ext .ts,.tsx,.js,.jsx",
+    "lint:fix": "eslint src --ext .ts,.tsx,.js,.jsx --fix",
+    "fix:all": "npm run format && npm run lint:fix",
+    "type-check": "tsc -p tsconfig.typecheck.json --noEmit",
+    "code-quality": "npm run lint; npm run type-check",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "format:fix-endings": "prettier --write --end-of-line lf \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "lineendings:check": "git ls-files src/ | xargs file | grep CRLF || echo \"All files use LF line endings\"",
+    "port:check": "echo \"Checking available ports...\" && (netstat -ano | findstr \":3000.*LISTENING\" && echo \"Port 3000 is in use\" || echo \"Port 3000 is available\")",
+    "port:kill:3000": "for /f \"tokens=5\" %i in ('netstat -ano ^| findstr \":3000.*LISTENING\"') do taskkill /PID %i /F",
+    "port:kill:3001": "for /f \"tokens=5\" %i in ('netstat -ano ^| findstr \":3001.*LISTENING\"') do taskkill /PID %i /F",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "src/**/*.{json,css,md}": [
+      "prettier --write"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

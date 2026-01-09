@@ -1,0 +1,405 @@
+/* ============================================================================
+   Service Management Page Styles (GitManagement)
+   ============================================================================ */
+
+/* Import common management styles */
+@import '../../styles/common-management.css';
+
+/* Page Container */
+.service-management.management-page {
+  padding: 24px;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* Page Header */
+.service-management .page-header {
+  background: #fff;
+  padding: 20px 24px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-management .page-header-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.service-management .page-header-title > .anticon {
+  margin-top: 4px;
+}
+
+.service-management .page-header-title h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f2937;
+  line-height: 1.3;
+}
+
+.service-management .page-header-description {
+  color: #6b7280;
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.service-management .page-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Statistics Cards */
+.service-management .stats-row {
+  margin-bottom: 20px;
+}
+
+.service-management .stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  height: 100%;
+}
+
+.service-management .stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.service-management .stat-card .ant-statistic-title {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.service-management .stat-card .ant-statistic-content {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.service-management .stat-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.service-management .stat-card-icon.blue {
+  background: #e6f7ff;
+  color: #1890ff;
+}
+
+.service-management .stat-card-icon.green {
+  background: #f6ffed;
+  color: #52c41a;
+}
+
+.service-management .stat-card-icon.purple {
+  background: #f0f5ff;
+  color: #326ce5;
+}
+
+/* Main Card */
+.service-management .main-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.service-management .main-card .ant-card-head {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 16px 24px;
+  background: #fff;
+}
+
+.service-management .main-card .ant-card-head-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.service-management .main-card .ant-card-body {
+  padding: 24px;
+}
+
+/* Service List Card */
+.service-management .service-list-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin-bottom: 16px;
+}
+
+.service-management .service-list-card .ant-card-head {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.service-management .service-list-card .ant-card-body {
+  padding: 20px;
+}
+
+/* Search and Filter Bar */
+.service-management .search-bar {
+  margin-bottom: 20px;
+}
+
+.service-management .search-bar .ant-input-search {
+  border-radius: 8px;
+}
+
+/* Service Item Card */
+.service-management .service-item {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  transition: all 0.2s;
+}
+
+.service-management .service-item:hover {
+  border-color: #1890ff;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.1);
+}
+
+.service-management .service-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.service-management .service-item-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: #1f2937;
+}
+
+.service-management .service-item-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.service-management .service-item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Service Card Layout */
+.service-management .service-card {
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 12px;
+  transition: all 0.2s;
+}
+
+.service-management .service-card:hover {
+  border-color: #1890ff;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.1);
+}
+
+.service-management .repo-card-content {
+  display: flex;
+  align-items: stretch;
+}
+
+.service-management .repo-info {
+  flex: 0 0 auto;
+  min-width: 200px;
+  padding-right: 16px;
+  border-right: 1px solid #f0f0f0;
+}
+
+.service-management .pipeline-view-container {
+  flex: 1;
+  min-width: 0;
+  padding: 0 16px;
+}
+
+.service-management .repo-actions {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding-left: 16px;
+  border-left: 1px solid #f0f0f0;
+  min-width: 120px;
+}
+
+.service-management .repo-actions .action-button {
+  font-size: 13px;
+  height: 32px;
+  border-radius: 6px;
+}
+
+.service-management .repo-actions .action-button-member {
+  color: #1890ff;
+  border-color: #91d5ff;
+  background: #e6f7ff;
+}
+
+.service-management .repo-actions .action-button-member:hover {
+  color: #40a9ff;
+  border-color: #40a9ff;
+  background: #f0f9ff;
+}
+
+.service-management .repo-actions .action-button-delete {
+  color: #ff4d4f;
+  border-color: #ffa39e;
+  background: #fff1f0;
+}
+
+.service-management .repo-actions .action-button-delete:hover {
+  color: #ff7875;
+  border-color: #ff7875;
+  background: #fff2f0;
+}
+
+/* Tags */
+.service-management .ant-tag {
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 2px 8px;
+  font-weight: 500;
+}
+
+/* Buttons */
+.service-management .ant-btn {
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.service-management .ant-btn-primary {
+  box-shadow: 0 2px 4px rgba(24, 144, 255, 0.3);
+}
+
+/* Modal Styles */
+.service-management .ant-modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.service-management .ant-modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.service-management .ant-modal-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.service-management .ant-modal-body {
+  padding: 24px;
+}
+
+.service-management .ant-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Pipeline Status */
+.service-management .pipeline-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.service-management .pipeline-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.service-management .pipeline-status-dot.running {
+  background: #1890ff;
+  animation: pulse 1.5s infinite;
+}
+
+.service-management .pipeline-status-dot.success {
+  background: #52c41a;
+}
+
+.service-management .pipeline-status-dot.failed {
+  background: #ff4d4f;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Empty State */
+.service-management .ant-empty {
+  padding: 60px 20px;
+}
+
+.service-management .ant-empty-description {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Pagination */
+.service-management .ant-pagination {
+  margin-top: 16px;
+  text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .service-management.management-page {
+    padding: 16px;
+  }
+
+  .service-management .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .service-management .page-header-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .service-management .stat-card {
+    margin-bottom: 12px;
+  }
+
+  .service-management .service-item-header {
+    flex-direction: column;
+  }
+
+  .service-management .service-item-actions {
+    margin-top: 12px;
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

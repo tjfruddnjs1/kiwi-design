@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [
+    "src/components/services/**/*",
+    "src/components/common/**/*",
+    "src/components/services/detail/**/*",
+    "src/types/**/*",
+    "src/lib/api/**/*",
+    "src/utils/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "src/components/infra/**/*"
+  ]
+}
+
+

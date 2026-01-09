@@ -1,0 +1,71 @@
+@import '../../styles/common-management.css';
+
+/* 사용자 관리 페이지 스타일 */
+.users-management.management-page {
+  padding: 24px;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* 페이지 헤더 스타일 */
+.users-management .page-header-card {
+  margin-bottom: 16px;
+}
+
+.users-management .page-header-card .ant-card-body {
+  padding: 16px 24px;
+}
+
+/* 통계 카드 반응형 */
+@media (max-width: 768px) {
+  .users-management .stat-row .ant-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .users-management .stat-row .ant-col:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* 기관 선택 영역 반응형 */
+@media (max-width: 576px) {
+  .users-management .org-select-card .ant-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .users-management .org-select-card .ant-select {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+
+  .users-management .org-select-card .ant-btn {
+    width: 100%;
+  }
+}
+
+/* 테이블 반응형 */
+@media (max-width: 768px) {
+  .users-management .ant-table-thead > tr > th,
+  .users-management .ant-table-tbody > tr > td {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .users-management .ant-table-thead > tr > th:nth-child(3),
+  .users-management .ant-table-tbody > tr > td:nth-child(3) {
+    /* 권한 컬럼 */
+    max-width: 150px;
+  }
+}
+
+/* 권한 태그 반응형 */
+@media (max-width: 576px) {
+  .users-management .ant-tag {
+    font-size: 11px;
+    padding: 0 6px;
+    margin: 2px;
+  }
+}

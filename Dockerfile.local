@@ -1,0 +1,41 @@
+# Stage 1: Build the React app
+FROM node:18-alpine AS build
+
+WORKDIR /app
+
+# Install pnpm
+RUN npm install -g pnpm
+
+# Copy dependency files and install dependencies
+COPY package.json pnpm-lock.yaml* ./
+RUN pnpm install
+
+# Copy source code (excluding node_modules)
+COPY . .
+
+# Set build-time environment variable
+ARG REACT_APP_API_URL
+ENV REACT_APP_API_URL=$REACT_APP_API_URL
+
+# Build the application
+RUN pnpm run build
+
+# Install 'serve' to serve the build files
+RUN pnpm add serve
+
+
+# Stage 2: Production environment
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy built app and dependencies from builder stage
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/package.json ./package.json
+
+# Expose port 3000
+EXPOSE 3000
+
+# Start the app by serving the dist folder on all interfaces
+CMD ["npx", "serve", "-s", "dist", "-l", "tcp://0.0.0.0:3000"] 

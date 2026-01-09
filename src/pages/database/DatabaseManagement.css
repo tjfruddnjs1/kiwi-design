@@ -1,0 +1,614 @@
+/* Database Management Page Styles */
+/* ================================ */
+
+@import '../../styles/common-management.css';
+
+.database-management.management-page {
+  padding: 24px;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* Page Header */
+.database-management .page-header {
+  background: #fff;
+  padding: 20px 24px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.database-management .page-header-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.database-management .page-header-title > .anticon {
+  margin-top: 4px;
+}
+
+.database-management .page-header-title h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f2937;
+  line-height: 1.3;
+}
+
+.database-management .page-header-description {
+  color: #6b7280;
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Statistics Cards */
+.database-management .stats-row {
+  margin-bottom: 20px;
+}
+
+.database-management .stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  height: 100%;
+}
+
+.database-management .stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.database-management .stat-card .ant-statistic-title {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.database-management .stat-card .ant-statistic-content {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.database-management .stat-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.database-management .stat-card-icon.blue {
+  background: #e6f7ff;
+  color: #1890ff;
+}
+
+.database-management .stat-card-icon.green {
+  background: #f6ffed;
+  color: #52c41a;
+}
+
+.database-management .stat-card-icon.purple {
+  background: #f9f0ff;
+  color: #722ed1;
+}
+
+.database-management .stat-card-icon.orange {
+  background: #fff7e6;
+  color: #fa8c16;
+}
+
+/* Main Card Container */
+.database-management .main-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Tabs Styling */
+.database-management .ant-tabs {
+  background: transparent;
+}
+
+.database-management .ant-tabs-nav {
+  margin-bottom: 0;
+  padding: 0 24px;
+  background: #fff;
+}
+
+.database-management .ant-tabs-nav::before {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.database-management .ant-tabs-tab {
+  padding: 16px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  transition: all 0.2s;
+}
+
+.database-management .ant-tabs-tab:hover {
+  color: #1890ff;
+}
+
+.database-management .ant-tabs-tab.ant-tabs-tab-active {
+  color: #1890ff;
+}
+
+.database-management .ant-tabs-tab .anticon {
+  margin-right: 8px;
+}
+
+.database-management .ant-tabs-ink-bar {
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+}
+
+.database-management .ant-tabs-content {
+  padding: 24px;
+}
+
+/* Tab Toolbar */
+.database-management .tab-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.database-management .tab-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.database-management .tab-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Tables */
+.database-management .ant-table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.database-management .ant-table-thead > tr > th {
+  background: #fafbfc;
+  font-weight: 600;
+  font-size: 13px;
+  color: #374151;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.database-management .ant-table-tbody > tr > td {
+  padding: 14px 16px;
+  font-size: 13px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.database-management .ant-table-tbody > tr:hover > td {
+  background: #f9fafb;
+}
+
+.database-management .ant-table-tbody > tr:last-child > td {
+  border-bottom: none;
+}
+
+/* Table Actions */
+.database-management .table-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.database-management .table-actions .ant-btn {
+  padding: 4px 8px;
+  height: auto;
+}
+
+/* Connection Status */
+.database-management .connection-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.database-management .connection-status.connected {
+  background: #f6ffed;
+  color: #52c41a;
+  border: 1px solid #b7eb8f;
+}
+
+.database-management .connection-status.failed {
+  background: #fff1f0;
+  color: #ff4d4f;
+  border: 1px solid #ffa39e;
+}
+
+.database-management .connection-status.unknown {
+  background: #f5f5f5;
+  color: #8c8c8c;
+  border: 1px solid #d9d9d9;
+}
+
+.database-management .connection-status.testing {
+  background: #e6f7ff;
+  color: #1890ff;
+  border: 1px solid #91d5ff;
+}
+
+/* Tags */
+.database-management .ant-tag {
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 2px 8px;
+}
+
+/* Alerts */
+.database-management .ant-alert {
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.database-management .ant-alert-info {
+  background: #f0f7ff;
+  border-color: #91caff;
+}
+
+.database-management .ant-alert-warning {
+  background: #fffbe6;
+  border-color: #ffe58f;
+}
+
+/* Cards */
+.database-management .section-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+.database-management .section-card .ant-card-head {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 16px 24px;
+}
+
+.database-management .section-card .ant-card-head-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.database-management .section-card .ant-card-body {
+  padding: 20px 24px;
+}
+
+/* Empty State */
+.database-management .ant-empty {
+  padding: 60px 20px;
+}
+
+.database-management .ant-empty-description {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.database-management .empty-action {
+  margin-top: 16px;
+}
+
+/* Form Styles */
+.database-management .ant-form-item-label > label {
+  font-weight: 500;
+  color: #374151;
+}
+
+.database-management .ant-input,
+.database-management .ant-input-number,
+.database-management .ant-select-selector {
+  border-radius: 6px !important;
+}
+
+.database-management .ant-input:focus,
+.database-management .ant-input-number:focus,
+.database-management .ant-select-selector:focus {
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* Buttons */
+.database-management .ant-btn {
+  border-radius: 6px;
+  font-weight: 500;
+  height: 36px;
+  padding: 0 16px;
+}
+
+.database-management .ant-btn-primary {
+  box-shadow: 0 2px 4px rgba(24, 144, 255, 0.3);
+}
+
+.database-management .ant-btn-sm {
+  height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+/* Modal Styles */
+.database-management .ant-modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.database-management .ant-modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.database-management .ant-modal-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.database-management .ant-modal-body {
+  padding: 24px;
+}
+
+.database-management .ant-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Migration Form */
+.database-management .migration-form {
+  background: #fafbfc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.database-management .migration-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #8c8c8c;
+  padding-top: 30px;
+}
+
+/* Comparison Results */
+.database-management .compare-result-card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.database-management .compare-result-card .ant-card-head {
+  background: #fafbfc;
+}
+
+.database-management .diff-section {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.database-management .diff-section-title {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Execution Log */
+.database-management .execution-log {
+  max-height: 400px;
+  overflow-y: auto;
+  background: #1f2937;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.database-management .log-entry {
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  font-size: 12px;
+}
+
+.database-management .log-entry.info {
+  background: rgba(24, 144, 255, 0.1);
+  border-left: 3px solid #1890ff;
+}
+
+.database-management .log-entry.warn {
+  background: rgba(250, 173, 20, 0.1);
+  border-left: 3px solid #faad14;
+}
+
+.database-management .log-entry.error {
+  background: rgba(255, 77, 79, 0.1);
+  border-left: 3px solid #ff4d4f;
+}
+
+.database-management .log-timestamp {
+  color: #8c8c8c;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.database-management .log-message {
+  color: #e5e7eb;
+}
+
+.database-management .log-sql {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: #111827;
+  border-radius: 4px;
+  color: #d4d4d4;
+  font-size: 11px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* Backup Card */
+.database-management .backup-stat-card {
+  text-align: center;
+  padding: 20px;
+}
+
+.database-management .backup-stat-card .ant-statistic-title {
+  font-size: 13px;
+}
+
+.database-management .backup-stat-card .ant-statistic-content {
+  font-size: 24px;
+}
+
+/* Expandable Row */
+.database-management .ant-table-expanded-row > td {
+  padding: 0 !important;
+  background: #f9fafb;
+}
+
+.database-management .expanded-content {
+  padding: 20px 24px;
+}
+
+/* Progress Indicator */
+.database-management .sync-progress {
+  background: #f0f7ff;
+  border: 1px solid #91caff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.database-management .sync-progress-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #1890ff;
+  margin-bottom: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .database-management {
+    padding: 16px;
+  }
+
+  .database-management .tab-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .database-management .ant-tabs-tab {
+    padding: 12px 12px;
+    font-size: 13px;
+  }
+
+  .database-management .stat-card {
+    margin-bottom: 12px;
+  }
+}
+
+/* Badge in tabs */
+.database-management .ant-badge {
+  margin-left: 8px;
+}
+
+.database-management .ant-badge-count {
+  font-size: 11px;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  line-height: 18px;
+  border-radius: 9px;
+}
+
+/* Divider */
+.database-management .ant-divider {
+  margin: 16px 0;
+}
+
+/* Collapse */
+.database-management .ant-collapse {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.database-management .ant-collapse-header {
+  font-weight: 500;
+}
+
+/* Select in forms */
+.database-management .db-select .ant-select-selection-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Action group */
+.database-management .action-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Info box */
+.database-management .info-box {
+  background: #f0f7ff;
+  border: 1px solid #91caff;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.database-management .info-box-icon {
+  color: #1890ff;
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.database-management .info-box-content {
+  flex: 1;
+}
+
+.database-management .info-box-title {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.database-management .info-box-description {
+  color: #6b7280;
+  font-size: 13px;
+}
